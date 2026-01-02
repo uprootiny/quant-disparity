@@ -14,7 +14,11 @@
 | Hypothesis | Predictor | r | Status |
 |------------|-----------|---|--------|
 | Tokenization | fertility | 0.34 | falsified |
-| **Weight distribution** | **kurtosis** | **0.92** | **validating** |
+| Per-language weight kurtosis | kurtosis | 0.92 (mock) | refined |
+| **Per-layer kurtosis** | **layer activation** | — | **investigating** |
+
+**Phase 1 Finding:** BLOOM-560M has globally heavy-tailed weights (mean kurtosis +30).
+Layers 5, 21, 22 have kurtosis >100. The question is now: which layers do different languages activate?
 
 ## Quick Start
 

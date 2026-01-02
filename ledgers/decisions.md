@@ -32,3 +32,12 @@
 **Date:** 2026-01-02
 **Decision:** Validate on CPU before investing in GPU compute.
 **Rationale:** Minimize cost until hypothesis validated.
+
+## D006: Hypothesis Refinement
+
+**Date:** 2026-01-02
+**Finding:** Real weight analysis shows BLOOM-560M has globally heavy-tailed weights.
+**Mean kurtosis:** +30 (vs mock assumption of 0.3-2.4)
+**Extreme layers:** 5, 21, 22 have kurtosis >100
+**Decision:** Shift from "per-language weight kurtosis" to "per-layer kurtosis × per-language activation"
+**Next step:** Analyze which layers activate most for each language.
