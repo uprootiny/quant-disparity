@@ -1,0 +1,26 @@
+{
+  "source": "Marchisio et al. 2024 (approximated from figures)",
+  "metric": "relative_ppl_increase_w4",
+  "values": {
+    "eng": -0.005,
+    "fra": -0.007,
+    "deu": -0.008,
+    "vie": -0.009,
+    "rus": -0.012,
+    "zho": -0.013,
+    "tur": -0.015,
+    "fin": -0.016,
+    "kor": -0.018,
+    "heb": -0.020,
+    "tha": -0.020,
+    "hin": -0.021,
+    "jpn": -0.022,
+    "ara": -0.025
+  },
+  "notes": [
+    "Negative values = worse performance",
+    "Ordered by increasing degradation",
+    "Latin script languages cluster at low degradation",
+    "Non-Latin scripts show 2-3x more degradation"
+  ]
+}
