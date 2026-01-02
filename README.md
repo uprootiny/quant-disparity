@@ -11,12 +11,20 @@
 
 ## Status
 
-| Hypothesis | Predictor | BLOOM r | XGLM r | Status |
-|------------|-----------|---------|--------|--------|
-| Tokenization | fertility | +0.34 | — | falsified |
-| Layer activation | w.kurtosis | **-0.77** | +0.38 | BLOOM-specific |
+| Phase | Experiments | Status |
+|-------|-------------|--------|
+| Phase 0: Validation | EXP-001, EXP-002 | COMPLETE |
+| Phase 1: Analysis | EXP-003 to EXP-008 | COMPLETE |
+| Phase 2: Sensitivity | EXP-009 (bit-width) | IN PROGRESS |
+| Phase 3: Algorithm | — | FUTURE |
 
-**Key Finding:** The BLOOM correlation (r=-0.77) does NOT replicate in XGLM (r=+0.38, n.s.).
+| Experiment | Finding | r | Status |
+|------------|---------|---|--------|
+| EXP-003 | Layer activation × kurtosis | -0.77 | Significant |
+| EXP-007 | Outlier layer activation | **-0.83** | Confirmed |
+| EXP-008 | Bootstrap validation | CI [-0.93,-0.65] | Robust |
+
+**Key Finding:** Languages that activate outlier layers (5,21,22) LESS degrade MORE.
 
 ```
            BLOOM               XGLM
@@ -89,9 +97,11 @@ Our extension: **Languages activate different neuron subsets with different weig
 
 ## Next Steps
 
-1. **[NEXT]** Extract real weight statistics from BLOOM-560M
-2. **[WAIT]** Build layer×language sensitivity matrix
-3. **[WAIT]** Develop language-aware quantization
+1. **[DONE]** Extract real weight statistics from BLOOM-560M
+2. **[DONE]** Establish activation-outlier mechanism (r=-0.83)
+3. **[CURRENT]** EXP-009: Bit-width sweep (test threshold predictions)
+4. **[NEXT]** Build layer×language sensitivity matrix
+5. **[FUTURE]** Develop language-aware quantization
 
 ## References
 
