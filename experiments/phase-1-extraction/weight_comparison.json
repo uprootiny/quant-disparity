@@ -1,0 +1,16 @@
+{
+  "bloom_extreme_layers": [
+    5,
+    21,
+    22
+  ],
+  "bloom_high_layers": [
+    4,
+    6,
+    7,
+    23
+  ],
+  "pattern": "bimodal",
+  "bloom_mean_kurtosis": 29.642916666666668,
+  "xglm_mean_kurtosis": 0.6352032323678335
+}

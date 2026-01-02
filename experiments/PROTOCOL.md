@@ -14,7 +14,8 @@
 | EXP-001 | 2026-01-02 | Fertility→Degradation | r > 0.7 | r = 0.34 | FALSIFIED |
 | EXP-002 | 2026-01-02 | Kurtosis→Degradation (mock) | r > 0.7 | r = 0.92 | PASSED |
 | EXP-003 | 2026-01-02 | Layer activation→Degradation | r > 0.5 | r = -0.77 | SURPRISING |
-| EXP-004 | 2026-01-02 | XGLM replication | r < 0 | — | PENDING |
+| EXP-004 | 2026-01-02 | XGLM replication | r < 0 | r = +0.38 | NOT REPLICATED |
+| EXP-005 | 2026-01-02 | BLOOM layer pattern | depth-correlated | bimodal | COMPLETE |
 
 ---
 
@@ -155,6 +156,61 @@ Possible explanations:
 Per decision criteria: r_xglm > 0 → **BLOOM-SPECIFIC**
 
 Next step: Investigate why BLOOM shows the pattern but XGLM doesn't.
+
+---
+
+## EXP-005: BLOOM vs XGLM Weight Distribution
+
+**Pre-registration:** 2026-01-02
+**Status:** COMPLETE
+
+### Hypothesis
+BLOOM's heavy-tailed weights (vs XGLM's Gaussian) are concentrated in specific layers, likely related to training dynamics or architecture.
+
+### Predictions (pre-registered)
+1. BLOOM's extreme kurtosis layers (5, 21, 22) are MLP layers that handle language-specific processing
+2. XGLM's uniform kurtosis suggests different training regime or architecture
+3. The pattern may correlate with layer depth (early vs late)
+
+### Results
+
+**Layer Categorization (BLOOM):**
+
+| Category | Layers | Kurtosis Range |
+|----------|--------|----------------|
+| EXTREME | 5, 21, 22 | 126–164 |
+| HIGH | 4, 6, 7, 23 | 36–76 |
+| Normal | 0, 8, 9, 10, 20 | 5–16 |
+| Low | 1-3, 11-19 | 1–5 |
+
+**Key Metrics:**
+
+| Metric | BLOOM | XGLM | Ratio |
+|--------|-------|------|-------|
+| Max kurtosis | 164.30 | 1.94 | 85x |
+| Mean kurtosis | 29.64 | 0.64 | 46x |
+| Std kurtosis | 47.87 | 0.45 | 106x |
+| Extreme layers | 3 | 0 | — |
+
+**Pattern Analysis:**
+- Correlation (layer depth vs kurtosis): r = 0.22, p = 0.31 (NOT significant)
+- BIMODAL: Extreme layers in BOTH early (5) AND late (21, 22)
+- XGLM: Zero layers with kurtosis > 5
+
+### Conclusions
+
+1. **Prediction 1:** PARTIAL — Extreme layers exist but pattern is bimodal, not uniform
+2. **Prediction 2:** CONFIRMED — XGLM has zero extreme layers
+3. **Prediction 3:** REJECTED — No correlation with depth (r = 0.22, n.s.)
+
+**Interpretation:**
+BLOOM's extreme kurtosis in layers 4-7 and 20-23 is NOT depth-related.
+Possible causes:
+- Specific architectural components in those layer ranges
+- Training dynamics (instability at certain layers)
+- Outlier amplification as described in Chmiel et al.
+
+**Decision:** Per criteria → architecture-specific (layers cluster in two bands)
 
 ---
 

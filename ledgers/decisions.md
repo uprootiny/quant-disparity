@@ -64,3 +64,18 @@
 **Interpretation:** BLOOM's architecture creates language-dependent activation patterns due to heavy-tailed weights. XGLM's Gaussian weights don't differentiate.
 **Decision:** The activation-weighted kurtosis hypothesis is BLOOM-specific, not universal.
 **Next step:** Investigate why BLOOM has heavy-tailed weights (training data? architecture?)
+
+## D009: BLOOM Extreme Layers are Bimodal
+
+**Date:** 2026-01-02
+**Finding:** BLOOM's extreme kurtosis layers cluster in two bands:
+- Early-mid: layers 4-7 (kurtosis 39-126)
+- Late: layers 20-23 (kurtosis 16-164)
+**Correlation with depth:** r = 0.22 (NOT significant)
+**Pattern:** BIMODAL, not depth-related
+**Hypothesis:** Could be related to:
+- Outlier amplification (Chmiel et al. 2025)
+- Training instability at specific layers
+- Architectural components (SwiGLU, specific layer norms)
+**Decision:** BLOOM's weight anomaly is architecture-specific, concentrated in layer bands.
+**Next step:** Check if these layers correspond to known architectural features.
