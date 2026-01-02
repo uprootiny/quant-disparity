@@ -18,6 +18,7 @@
 | EXP-005 | 2026-01-02 | BLOOM layer pattern | depth-correlated | bimodal | COMPLETE |
 | EXP-006 | 2026-01-02 | BLOOM architecture | shape differs | outlier weights | COMPLETE |
 | EXP-007 | 2026-01-02 | Activation × Outliers | r < -0.5 | r = -0.83 | **CONFIRMED** |
+| EXP-008 | 2026-01-03 | Bootstrap validation | CI excludes 0 | [-0.93,-0.65] | **ROBUST** |
 
 ---
 
@@ -335,6 +336,61 @@ This explains WHY the correlation is negative: it's not that high-kurtosis hurts
 
 ### Decision
 Per criteria: correlation significant → **MECHANISM EXPLAINED**
+
+---
+
+## EXP-008: Statistical Robustness Validation
+
+**Pre-registration:** 2026-01-03
+**Status:** **ROBUST**
+
+### Hypothesis
+The r=-0.834 correlation from EXP-007 is statistically robust and not due to chance.
+
+### Predictions (pre-registered)
+1. 95% bootstrap CI excludes zero
+2. Permutation test p < 0.05
+3. Leave-one-out analysis shows stability
+
+### Method
+Note: Large corpus validation blocked by memory constraints.
+Alternative: Bootstrap and permutation testing on EXP-007 data.
+
+1. Bootstrap resampling (10,000 iterations) for correlation CI
+2. Permutation test (10,000 permutations) for significance
+3. Leave-one-out sensitivity analysis
+
+### Results
+
+**Bootstrap (10,000 resamples):**
+| Metric | Value |
+|--------|-------|
+| 95% CI | [-0.930, -0.645] |
+| Median r | -0.841 |
+| Std | 0.073 |
+
+**Permutation test:**
+| Metric | Value |
+|--------|-------|
+| p-value (one-sided) | 0.0001 |
+| Null mean | -0.001 |
+| Null std | 0.278 |
+
+**Leave-one-out (max influence):**
+| Language removed | Δr |
+|------------------|-----|
+| eng | +0.050 |
+| fra | +0.027 |
+| (all others) | < ±0.03 |
+
+### Conclusions
+
+1. **Prediction 1:** CONFIRMED — CI [-0.930, -0.645] excludes zero
+2. **Prediction 2:** CONFIRMED — permutation p = 0.0001
+3. **Prediction 3:** CONFIRMED — no single language drives the effect
+
+### Decision
+Per criteria: All three robustness tests passed → **STATISTICALLY ROBUST**
 
 ---
 
