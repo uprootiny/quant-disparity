@@ -1,0 +1,86 @@
+{
+  "ara": {
+    "outlier_frac": 0.1771732773159991,
+    "high_frac": 0.17882066343056535,
+    "combined_frac": 0.35599394074656443,
+    "total_activation": 13.493380218744278
+  },
+  "deu": {
+    "outlier_frac": 0.19006912617700442,
+    "high_frac": 0.18326777148172738,
+    "combined_frac": 0.3733368976587318,
+    "total_activation": 14.29165706038475
+  },
+  "eng": {
+    "outlier_frac": 0.20472343236993415,
+    "high_frac": 0.18602802800404167,
+    "combined_frac": 0.3907514603739758,
+    "total_activation": 12.91844467818737
+  },
+  "fin": {
+    "outlier_frac": 0.19102899482154037,
+    "high_frac": 0.18065200966711395,
+    "combined_frac": 0.3716810044886543,
+    "total_activation": 13.277874082326889
+  },
+  "fra": {
+    "outlier_frac": 0.20191485476897508,
+    "high_frac": 0.18432540392099778,
+    "combined_frac": 0.38624025868997286,
+    "total_activation": 12.783675789833069
+  },
+  "heb": {
+    "outlier_frac": 0.18312683967322171,
+    "high_frac": 0.18042651506439386,
+    "combined_frac": 0.3635533547376156,
+    "total_activation": 13.314628779888153
+  },
+  "hin": {
+    "outlier_frac": 0.17208231565943247,
+    "high_frac": 0.17371380201730838,
+    "combined_frac": 0.34579611767674084,
+    "total_activation": 13.860177755355835
+  },
+  "jpn": {
+    "outlier_frac": 0.18054177874698837,
+    "high_frac": 0.1784811363776513,
+    "combined_frac": 0.3590229151246397,
+    "total_activation": 13.818644613027573
+  },
+  "kor": {
+    "outlier_frac": 0.17879834137775838,
+    "high_frac": 0.17752579604550003,
+    "combined_frac": 0.3563241374232584,
+    "total_activation": 13.275694668293
+  },
+  "rus": {
+    "outlier_frac": 0.18197223056576256,
+    "high_frac": 0.1792273920403773,
+    "combined_frac": 0.36119962260613986,
+    "total_activation": 13.450400173664093
+  },
+  "tha": {
+    "outlier_frac": 0.17520247598700625,
+    "high_frac": 0.17810115047830002,
+    "combined_frac": 0.3533036264653063,
+    "total_activation": 14.294116199016571
+  },
+  "tur": {
+    "outlier_frac": 0.18287963594062848,
+    "high_frac": 0.18723430935846036,
+    "combined_frac": 0.3701139452990888,
+    "total_activation": 12.798042744398117
+  },
+  "vie": {
+    "outlier_frac": 0.18980710152571836,
+    "high_frac": 0.18386806586572566,
+    "combined_frac": 0.373675167391444,
+    "total_activation": 12.704178541898727
+  },
+  "zho": {
+    "outlier_frac": 0.18262034721831819,
+    "high_frac": 0.1772159565621761,
+    "combined_frac": 0.35983630378049425,
+    "total_activation": 14.160533666610718
+  }
+}
