@@ -41,3 +41,14 @@
 **Extreme layers:** 5, 21, 22 have kurtosis >100
 **Decision:** Shift from "per-language weight kurtosis" to "per-layer kurtosis × per-language activation"
 **Next step:** Analyze which layers activate most for each language.
+
+## D007: Surprising Negative Correlation
+
+**Date:** 2026-01-02
+**Finding:** r = -0.77 (p = 0.001) between activation-weighted kurtosis and degradation.
+**Interpretation:** Languages with LOWER weighted kurtosis (relying more on early layers) degrade MORE.
+**Hypothesis revision:** Early layer fragility for under-represented languages.
+**Evidence:**
+- eng/fra (w.kurt=43) → low degradation (0.005-0.007)
+- ara/hin (w.kurt=38) → high degradation (0.021-0.025)
+**Next step:** Validate on another model (XGLM) or investigate early/late layer sensitivity directly.

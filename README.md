@@ -11,14 +11,20 @@
 
 ## Status
 
-| Hypothesis | Predictor | r | Status |
-|------------|-----------|---|--------|
-| Tokenization | fertility | 0.34 | falsified |
-| Per-language weight kurtosis | kurtosis | 0.92 (mock) | refined |
-| **Per-layer kurtosis** | **layer activation** | — | **investigating** |
+| Hypothesis | Predictor | r | p | Status |
+|------------|-----------|---|---|--------|
+| Tokenization | fertility | +0.34 | >0.05 | falsified |
+| Per-language weight kurtosis | kurtosis | +0.92 | <0.001 | mock only |
+| **Layer activation pattern** | **weighted kurtosis** | **-0.77** | **0.001** | **significant** |
 
-**Phase 1 Finding:** BLOOM-560M has globally heavy-tailed weights (mean kurtosis +30).
-Layers 5, 21, 22 have kurtosis >100. The question is now: which layers do different languages activate?
+**Key Finding:** Languages with LOWER activation-weighted kurtosis degrade MORE (r=-0.77).
+
+```
+eng/fra: w.kurt=43 → degradation=0.005-0.007  (low)
+ara/hin: w.kurt=38 → degradation=0.021-0.025  (high)
+```
+
+**Interpretation:** Under-represented languages rely more on early layers, which may be more fragile.
 
 ## Quick Start
 
