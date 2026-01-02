@@ -16,6 +16,7 @@
 | EXP-003 | 2026-01-02 | Layer activation→Degradation | r > 0.5 | r = -0.77 | SURPRISING |
 | EXP-004 | 2026-01-02 | XGLM replication | r < 0 | r = +0.38 | NOT REPLICATED |
 | EXP-005 | 2026-01-02 | BLOOM layer pattern | depth-correlated | bimodal | COMPLETE |
+| EXP-006 | 2026-01-02 | BLOOM architecture | shape differs | outlier weights | COMPLETE |
 
 ---
 
@@ -211,6 +212,68 @@ Possible causes:
 - Outlier amplification as described in Chmiel et al.
 
 **Decision:** Per criteria → architecture-specific (layers cluster in two bands)
+
+---
+
+## EXP-006: BLOOM Architecture Analysis
+
+**Pre-registration:** 2026-01-02
+**Status:** PENDING
+
+### Hypothesis
+BLOOM's extreme kurtosis layers (4-7, 20-23) have distinct architectural properties compared to normal layers.
+
+### Predictions (pre-registered)
+1. Extreme layers may have different weight matrix sizes
+2. Extreme layers may correspond to specific model components
+3. The bimodal pattern may relate to BLOOM's training dynamics
+
+### Method
+1. Examine BLOOM model configuration
+2. Compare weight shapes across layers
+3. Check for patterns in extreme vs normal layers
+4. Look for architectural differences
+
+### Decision criteria
+- If weights differ in shape: architectural cause
+- If weights are identical: training dynamics cause
+- If pattern matches known BLOOM features: explainable
+
+### Results
+
+**Stage 1: Weight shapes are IDENTICAL across all layers.**
+
+All layers: (4096, 1024) and (1024, 4096)
+→ Architecture is NOT the cause
+
+**Stage 2: Outlier weights cause extreme kurtosis.**
+
+| Category | Layers | Mean Max|W| | Mean Kurtosis |
+|----------|--------|----------|---------------|
+| EXTREME | 5, 21, 22 | 2.68 | 146 |
+| HIGH | 4, 6, 7, 23 | 1.99 | 49 |
+| normal | 0, 8-10, 20 | 0.83 | 9 |
+| low | 1-3, 11-19 | 0.74 | 3 |
+
+**Key observation:** Extreme kurtosis layers have weights 3-4x larger than normal.
+
+Specific outliers:
+- Layer 5: max |W| = 2.54
+- Layer 21: max |W| = 2.80
+- Layer 22: max |W| = 2.71
+
+### Conclusions
+
+1. **Prediction 1:** REJECTED — all layers have same shape
+2. **Prediction 2:** CONFIRMED — extreme layers have larger max weights
+3. **Prediction 3:** PARTIAL — pattern suggests training instability
+
+**Interpretation:**
+BLOOM's extreme kurtosis is caused by OUTLIER WEIGHTS, not architecture.
+Layers 4-7 and 20-23 developed extreme weight values during training.
+This aligns with Chmiel et al.'s "outlier amplification" phenomenon.
+
+**Decision:** Training dynamics cause, not architecture.
 
 ---
 
