@@ -11,20 +11,22 @@
 
 ## Status
 
-| Hypothesis | Predictor | r | p | Status |
-|------------|-----------|---|---|--------|
-| Tokenization | fertility | +0.34 | >0.05 | falsified |
-| Per-language weight kurtosis | kurtosis | +0.92 | <0.001 | mock only |
-| **Layer activation pattern** | **weighted kurtosis** | **-0.77** | **0.001** | **significant** |
+| Hypothesis | Predictor | BLOOM r | XGLM r | Status |
+|------------|-----------|---------|--------|--------|
+| Tokenization | fertility | +0.34 | — | falsified |
+| Layer activation | w.kurtosis | **-0.77** | +0.38 | BLOOM-specific |
 
-**Key Finding:** Languages with LOWER activation-weighted kurtosis degrade MORE (r=-0.77).
+**Key Finding:** The BLOOM correlation (r=-0.77) does NOT replicate in XGLM (r=+0.38, n.s.).
 
 ```
-eng/fra: w.kurt=43 → degradation=0.005-0.007  (low)
-ara/hin: w.kurt=38 → degradation=0.021-0.025  (high)
+           BLOOM               XGLM
+           ─────               ────
+Layer kurt: 0.96–164.30       0.2–1.9 (near Gaussian)
+W.kurt spread: 5.5            0.06 (uniform)
+Correlation: r=-0.77 **       r=+0.38 n.s.
 ```
 
-**Interpretation:** Under-represented languages rely more on early layers, which may be more fragile.
+**Interpretation:** BLOOM's heavy-tailed weights create language-dependent patterns. XGLM's Gaussian weights don't differentiate.
 
 ## Quick Start
 

@@ -52,3 +52,15 @@
 - eng/fra (w.kurt=43) → low degradation (0.005-0.007)
 - ara/hin (w.kurt=38) → high degradation (0.021-0.025)
 **Next step:** Validate on another model (XGLM) or investigate early/late layer sensitivity directly.
+
+## D008: XGLM Replication Failed
+
+**Date:** 2026-01-02
+**Finding:** XGLM r = +0.38 (p = 0.18, NOT significant)
+**Conclusion:** The BLOOM correlation does NOT replicate.
+**Key difference:**
+- BLOOM layer kurtosis: 0.96–164.30 (heavy-tailed)
+- XGLM layer kurtosis: 0.2–1.9 (near-Gaussian)
+**Interpretation:** BLOOM's architecture creates language-dependent activation patterns due to heavy-tailed weights. XGLM's Gaussian weights don't differentiate.
+**Decision:** The activation-weighted kurtosis hypothesis is BLOOM-specific, not universal.
+**Next step:** Investigate why BLOOM has heavy-tailed weights (training data? architecture?)

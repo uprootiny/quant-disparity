@@ -1,0 +1,58 @@
+{
+  "ara": {
+    "weighted_kurtosis": 0.6128776124893732,
+    "tokens": 14
+  },
+  "deu": {
+    "weighted_kurtosis": 0.6087964852640355,
+    "tokens": 14
+  },
+  "eng": {
+    "weighted_kurtosis": 0.5923417558520755,
+    "tokens": 15
+  },
+  "fin": {
+    "weighted_kurtosis": 0.628411630441048,
+    "tokens": 7
+  },
+  "fra": {
+    "weighted_kurtosis": 0.6018046648159399,
+    "tokens": 17
+  },
+  "heb": {
+    "weighted_kurtosis": 0.6543228976879664,
+    "tokens": 12
+  },
+  "hin": {
+    "weighted_kurtosis": 0.6256924182894005,
+    "tokens": 8
+  },
+  "jpn": {
+    "weighted_kurtosis": 0.6064675592601465,
+    "tokens": 17
+  },
+  "kor": {
+    "weighted_kurtosis": 0.6026979247169634,
+    "tokens": 12
+  },
+  "rus": {
+    "weighted_kurtosis": 0.6249760300949793,
+    "tokens": 8
+  },
+  "tha": {
+    "weighted_kurtosis": 0.6370219957260774,
+    "tokens": 7
+  },
+  "tur": {
+    "weighted_kurtosis": 0.637294475448843,
+    "tokens": 10
+  },
+  "vie": {
+    "weighted_kurtosis": 0.6303094665070439,
+    "tokens": 11
+  },
+  "zho": {
+    "weighted_kurtosis": 0.6091596679832679,
+    "tokens": 13
+  }
+}
