@@ -1,0 +1,33 @@
+{
+  "correlations": {
+    "kurtosis": {
+      "r": 0.9162237627573142,
+      "p": 4.15857574019239e-06
+    },
+    "outlier_ratio": {
+      "r": 0.908398841580534,
+      "p": 6.983685778203765e-06
+    },
+    "alpha_sigma": {
+      "r": 0.9162237627571181,
+      "p": 4.1585757402489785e-06
+    }
+  },
+  "regimes": {
+    "low_kurtosis": [
+      "deu",
+      "eng",
+      "fra",
+      "vie"
+    ],
+    "high_kurtosis": [
+      "ara",
+      "heb",
+      "hin",
+      "jpn",
+      "kor",
+      "tha",
+      "zho"
+    ]
+  }
+}
