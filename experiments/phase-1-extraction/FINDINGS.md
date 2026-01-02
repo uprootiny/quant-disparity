@@ -74,3 +74,70 @@ Following Banner et al.:
 | Heavy-tail (5, 21, 22) | >100 | 5.0+ (adjusted) |
 
 **Proposal:** Layer-specific clipping thresholds based on measured kurtosis, not language.
+
+---
+
+## Per-Language Layer Activation Analysis
+
+**Date:** 2026-01-02
+
+### Method
+
+For each language, computed activation-weighted kurtosis:
+
+```
+weighted_kurt = Σ(activation[i] × kurtosis[i]) / Σ(activation[i])
+```
+
+This measures how much each language relies on high-kurtosis vs low-kurtosis layers.
+
+### Results
+
+| Language | W.Kurtosis | Degradation |
+|----------|------------|-------------|
+| eng | 43.02 | 0.005 |
+| fra | 43.02 | 0.007 |
+| deu | 40.57 | 0.008 |
+| zho | 40.53 | 0.013 |
+| jpn | 40.27 | 0.022 |
+| vie | 40.14 | 0.009 |
+| fin | 40.06 | 0.016 |
+| rus | 39.55 | 0.012 |
+| heb | 39.28 | 0.020 |
+| tur | 39.05 | 0.015 |
+| ara | 38.83 | 0.025 |
+| tha | 38.14 | 0.020 |
+| kor | 38.05 | 0.018 |
+| hin | 37.52 | 0.021 |
+
+### Correlation
+
+```
+r = -0.766, p = 0.0014 [SIGNIFICANT]
+```
+
+**The correlation is NEGATIVE.** Languages with LOWER activation-weighted kurtosis degrade MORE.
+
+### Interpretation
+
+This is counterintuitive. We expected high-kurtosis reliance → more degradation.
+
+Instead: **Low-kurtosis reliance → more degradation.**
+
+Possible explanations:
+
+1. **Representation quality hypothesis:** Well-represented languages (eng, fra) have richer representations in late (high-kurtosis) layers. These representations are more redundant/robust.
+
+2. **Early layer fragility:** Under-represented languages rely more on early layers. Early layer representations may be more compressed and fragile.
+
+3. **Training data effect:** BLOOM was trained heavily on English/French. Their representations in late layers are more robust to quantization noise.
+
+### Revised Hypothesis
+
+> Languages that proportionally rely more on EARLY layers (lower weighted kurtosis) degrade more under quantization, possibly because early layer representations are more fragile for underrepresented languages.
+
+### Next Steps
+
+1. Test whether this holds on other models (XGLM, mT5)
+2. Investigate early vs late layer sensitivity directly
+3. Check if this correlates with training data volume

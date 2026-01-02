@@ -1,0 +1,72 @@
+{
+  "ara": {
+    "weighted_kurtosis": 38.83463273242243,
+    "total_activation": 13.664577066898346,
+    "tokens": 12
+  },
+  "deu": {
+    "weighted_kurtosis": 40.56984985107807,
+    "total_activation": 14.319077670574188,
+    "tokens": 14
+  },
+  "eng": {
+    "weighted_kurtosis": 43.02148925445388,
+    "total_activation": 12.66419231891632,
+    "tokens": 14
+  },
+  "fin": {
+    "weighted_kurtosis": 40.063245531293184,
+    "total_activation": 13.277874082326889,
+    "tokens": 11
+  },
+  "fra": {
+    "weighted_kurtosis": 43.02255236779985,
+    "total_activation": 12.59669317305088,
+    "tokens": 15
+  },
+  "heb": {
+    "weighted_kurtosis": 39.27812993637112,
+    "total_activation": 13.140332013368607,
+    "tokens": 33
+  },
+  "hin": {
+    "weighted_kurtosis": 37.52007476201848,
+    "total_activation": 13.454448491334915,
+    "tokens": 7
+  },
+  "jpn": {
+    "weighted_kurtosis": 40.27449183618619,
+    "total_activation": 13.358058542013168,
+    "tokens": 20
+  },
+  "kor": {
+    "weighted_kurtosis": 38.05095970673397,
+    "total_activation": 13.430642664432526,
+    "tokens": 27
+  },
+  "rus": {
+    "weighted_kurtosis": 39.5507385322978,
+    "total_activation": 13.450513809919357,
+    "tokens": 23
+  },
+  "tha": {
+    "weighted_kurtosis": 38.13560417483516,
+    "total_activation": 14.097833186388016,
+    "tokens": 36
+  },
+  "tur": {
+    "weighted_kurtosis": 39.051389715469,
+    "total_activation": 12.798042744398117,
+    "tokens": 11
+  },
+  "vie": {
+    "weighted_kurtosis": 40.144954636969196,
+    "total_activation": 12.708796679973602,
+    "tokens": 10
+  },
+  "zho": {
+    "weighted_kurtosis": 40.529176335598564,
+    "total_activation": 13.481654316186905,
+    "tokens": 11
+  }
+}
