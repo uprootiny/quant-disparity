@@ -1,0 +1,82 @@
+{
+  "per_language": {
+    "ara": {
+      "n_docs": 568,
+      "n_chars": 5893349,
+      "n_words": 981324,
+      "unique_chars": 789,
+      "char_entropy": 4.736535643733379,
+      "avg_word_len": 4.952968642364805,
+      "punct_density": 0.012786914506416447,
+      "type_token_ratio": 0.4498
+    },
+    "eng": {
+      "n_docs": 609,
+      "n_chars": 10417542,
+      "n_words": 1640841,
+      "unique_chars": 1023,
+      "char_entropy": 4.688037482054601,
+      "avg_word_len": 5.30306592777728,
+      "punct_density": 0.02847828069282934,
+      "type_token_ratio": 0.3404
+    },
+    "fra": {
+      "n_docs": 685,
+      "n_chars": 10137001,
+      "n_words": 1581925,
+      "unique_chars": 1080,
+      "char_entropy": 4.635067299853524,
+      "avg_word_len": 5.353239249648372,
+      "punct_density": 0.03114576947301085,
+      "type_token_ratio": 0.3697
+    },
+    "hin": {
+      "n_docs": 386,
+      "n_chars": 4129842,
+      "n_words": 749462,
+      "unique_chars": 581,
+      "char_entropy": 5.131173381985306,
+      "avg_word_len": 4.4714275039962,
+      "punct_density": 0.014848094305712494,
+      "type_token_ratio": 0.2885
+    },
+    "jpn": {
+      "n_docs": 495,
+      "n_chars": 3964361,
+      "n_words": 131417,
+      "unique_chars": 4201,
+      "char_entropy": 8.546196417768577,
+      "avg_word_len": 28.680726237853552,
+      "punct_density": 0.005258452074539927,
+      "type_token_ratio": 0.7826
+    },
+    "zho": {
+      "n_docs": 433,
+      "n_chars": 3882139,
+      "n_words": 79595,
+      "unique_chars": 8157,
+      "char_entropy": 9.666662952912953,
+      "avg_word_len": 47.15302468748037,
+      "punct_density": 0.005636986419565798,
+      "type_token_ratio": 0.7725
+    }
+  },
+  "correlations": {
+    "char_entropy": {
+      "r": 0.16867121926435968,
+      "p": 0.749392517528336
+    },
+    "avg_word_len": {
+      "r": 0.05178267867614361,
+      "p": 0.9223954082091909
+    },
+    "punct_density": {
+      "r": -0.7301946821332543,
+      "p": 0.09937213746876533
+    },
+    "type_token_ratio": {
+      "r": 0.24832116907751567,
+      "p": 0.6351744105463483
+    }
+  }
+}
