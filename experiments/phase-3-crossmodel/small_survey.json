@@ -1,0 +1,14 @@
+{
+  "OPT-125M": {
+    "mean_kurtosis": 11.745719178082192,
+    "max_kurtosis": 372.0
+  },
+  "Tiny-GPT2": {
+    "mean_kurtosis": -0.3953453643791577,
+    "max_kurtosis": 1.3399271965026855
+  },
+  "BERT-Tiny": {
+    "mean_kurtosis": 4.236315551994485,
+    "max_kurtosis": 29.99666976928711
+  }
+}

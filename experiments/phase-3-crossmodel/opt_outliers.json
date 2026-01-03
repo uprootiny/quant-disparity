@@ -1,0 +1,114 @@
+{
+  "max_kurtosis": 271.0,
+  "top_outliers": [
+    {
+      "name": "model.decoder.layers.1.self_attn.out_proj.weight",
+      "kurtosis": 271.0,
+      "max_abs": 0.68701171875,
+      "std": 0.015289306640625,
+      "shape": [
+        768,
+        768
+      ]
+    },
+    {
+      "name": "model.decoder.layers.11.self_attn.out_proj.weight",
+      "kurtosis": 60.21875,
+      "max_abs": 0.85546875,
+      "std": 0.03228759765625,
+      "shape": [
+        768,
+        768
+      ]
+    },
+    {
+      "name": "model.decoder.layers.2.fc2.weight",
+      "kurtosis": 51.0,
+      "max_abs": 1.130859375,
+      "std": 0.0302734375,
+      "shape": [
+        768,
+        3072
+      ]
+    },
+    {
+      "name": "model.decoder.embed_positions.weight",
+      "kurtosis": 45.0,
+      "max_abs": 0.327880859375,
+      "std": 0.01666259765625,
+      "shape": [
+        2050,
+        768
+      ]
+    },
+    {
+      "name": "model.decoder.layers.0.fc1.weight",
+      "kurtosis": 34.625,
+      "max_abs": 0.50927734375,
+      "std": 0.0285797119140625,
+      "shape": [
+        3072,
+        768
+      ]
+    },
+    {
+      "name": "model.decoder.layers.4.fc2.weight",
+      "kurtosis": 23.4375,
+      "max_abs": 1.044921875,
+      "std": 0.0322265625,
+      "shape": [
+        768,
+        3072
+      ]
+    },
+    {
+      "name": "model.decoder.layers.3.fc1.weight",
+      "kurtosis": 18.71875,
+      "max_abs": 0.68603515625,
+      "std": 0.02496337890625,
+      "shape": [
+        3072,
+        768
+      ]
+    },
+    {
+      "name": "model.decoder.layers.2.fc1.weight",
+      "kurtosis": 17.3125,
+      "max_abs": 0.5517578125,
+      "std": 0.02960205078125,
+      "shape": [
+        3072,
+        768
+      ]
+    },
+    {
+      "name": "model.decoder.layers.0.fc2.weight",
+      "kurtosis": 14.875,
+      "max_abs": 0.5810546875,
+      "std": 0.0262603759765625,
+      "shape": [
+        768,
+        3072
+      ]
+    },
+    {
+      "name": "model.decoder.layers.1.fc2.weight",
+      "kurtosis": 12.9375,
+      "max_abs": 0.6904296875,
+      "std": 0.031097412109375,
+      "shape": [
+        768,
+        3072
+      ]
+    }
+  ],
+  "outlier_components": {
+    "attention_out": 2,
+    "MLP": 1
+  },
+  "outlier_layers": [
+    1,
+    11,
+    2
+  ]
+}

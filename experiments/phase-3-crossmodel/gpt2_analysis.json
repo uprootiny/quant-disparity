@@ -1,0 +1,16 @@
+{
+  "model": "GPT-2-small",
+  "extreme_outlier": {
+    "name": "h.11.attn.c_proj.weight",
+    "kurtosis": 200.5951385498047,
+    "max_abs": 8.881817817687988,
+    "std": 0.17719589173793793,
+    "shape": [
+      768,
+      768
+    ],
+    "n_params": 589824
+  },
+  "n_outliers_gt50": 4,
+  "layer_max_kurtosis": {}
+}

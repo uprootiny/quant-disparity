@@ -1,0 +1,95 @@
+{
+  "experiment": "EXP-022",
+  "models_analyzed": [
+    "OPT-125M",
+    "BLOOM-560M",
+    "GPT2-small"
+  ],
+  "H1_dimension": {
+    "n_outliers": 32,
+    "correlation_r": -0.0029413840613646963,
+    "correlation_p": 0.9872527519190881,
+    "verdict": "H1 INCONCLUSIVE: no significant correlation",
+    "outliers": [
+      {
+        "model": "OPT-125M",
+        "name": "model.decoder.embed_positions.weight",
+        "n_params": 1574400,
+        "kurtosis": 59.0
+      },
+      {
+        "model": "OPT-125M",
+        "name": "model.decoder.layers.0.fc1.weight",
+        "n_params": 2359296,
+        "kurtosis": 38.84375
+      },
+      {
+        "model": "OPT-125M",
+        "name": "model.decoder.layers.1.self_attn.out_proj.weight",
+        "n_params": 589824,
+        "kurtosis": 368.0
+      },
+      {
+        "model": "OPT-125M",
+        "name": "model.decoder.layers.1.fc2.weight",
+        "n_params": 2359296,
+        "kurtosis": 51.65625
+      },
+      {
+        "model": "OPT-125M",
+        "name": "model.decoder.layers.2.fc1.weight",
+        "n_params": 2359296,
+        "kurtosis": 24.640625
+      },
+      {
+        "model": "OPT-125M",
+        "name": "model.decoder.layers.2.fc2.weight",
+        "n_params": 2359296,
+        "kurtosis": 21.15625
+      },
+      {
+        "model": "OPT-125M",
+        "name": "model.decoder.layers.3.fc2.weight",
+        "n_params": 2359296,
+        "kurtosis": 28.875
+      },
+      {
+        "model": "OPT-125M",
+        "name": "model.decoder.layers.11.self_attn.out_proj.weight",
+        "n_params": 589824,
+        "kurtosis": 31.625
+      },
+      {
+        "model": "OPT-125M",
+        "name": "model.decoder.layers.11.fc2.weight",
+        "n_params": 2359296,
+        "kurtosis": 52.21875
+      },
+      {
+        "model": "BLOOM-560M",
+        "name": "h.5.mlp.dense_h_to_4h.weight",
+        "n_params": 4194304,
+        "kurtosis": 43.0
+      }
+    ]
+  },
+  "H4_component": {
+    "model_comparison": {
+      "OPT-125M": {
+        "attn_max": 368.0,
+        "mlp_max": 52.21875
+      },
+      "BLOOM-560M": {
+        "attn_max": 504.25,
+        "mlp_max": 156.625
+      },
+      "GPT2-small": {
+        "attn_max": 159.2574462890625,
+        "mlp_max": 5910.56591796875
+      }
+    },
+    "attn_wins": 2,
+    "mlp_wins": 1,
+    "verdict": "H4 INCONCLUSIVE: no clear pattern"
+  }
+}

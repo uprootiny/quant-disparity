@@ -15,8 +15,11 @@
 |-------|-------------|--------|
 | Phase 0: Validation | EXP-001, EXP-002 | COMPLETE |
 | Phase 1: Analysis | EXP-003 to EXP-008 | COMPLETE |
-| Phase 2: Sensitivity | EXP-009 (bit-width) | IN PROGRESS |
-| Phase 3: Algorithm | — | FUTURE |
+| Phase 2: Corpus | EXP-009b (theory) | COMPLETE |
+| Phase 3: Cross-model | EXP-020 (census) | IN PROGRESS |
+| Phase 4: Algorithm | LA-ACIQ | FUTURE (needs GPU) |
+
+See [STATUS.md](STATUS.md) for full details.
 
 | Experiment | Finding | r | Status |
 |------------|---------|---|--------|

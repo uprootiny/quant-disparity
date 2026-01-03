@@ -1,0 +1,60 @@
+{
+  "bloom": {
+    "apply_residual_connection_post_layernorm": false,
+    "attention_dropout": 0.0,
+    "architectures": [
+      "BloomForCausalLM"
+    ],
+    "attention_softmax_in_fp32": true,
+    "bias_dropout_fusion": true,
+    "bos_token_id": 1,
+    "eos_token_id": 2,
+    "pad_token_id": 3,
+    "unk_token_id": 0,
+    "hidden_dropout": 0.0,
+    "initializer_range": 0.02,
+    "layer_norm_epsilon": 1e-05,
+    "masked_softmax_fusion": true,
+    "model_type": "bloom",
+    "n_embed": 1024,
+    "n_inner": null,
+    "n_layer": 24,
+    "num_attention_heads": 16,
+    "offset_alibi": 100,
+    "pretraining_tp": 1,
+    "skip_bias_add": true,
+    "skip_bias_add_qkv": false,
+    "transformers_version": "4.20.0",
+    "use_cache": true,
+    "vocab_size": 250880
+  },
+  "xglm": {
+    "activation_dropout": 0,
+    "activation_function": "gelu",
+    "architectures": [
+      "XGLMForCausalLM"
+    ],
+    "attention_dropout": 0.1,
+    "attention_heads": 16,
+    "bos_token_id": 0,
+    "d_model": 1024,
+    "decoder_start_token_id": 2,
+    "dropout": 0.1,
+    "eos_token_id": 2,
+    "ffn_dim": 4096,
+    "init_std": 0.02,
+    "layerdrop": 0.0,
+    "max_position_embeddings": 2048,
+    "model_type": "xglm",
+    "num_layers": 24,
+    "pad_token_id": 1,
+    "scale_embedding": true,
+    "transformers_version": "4.16.0.dev0",
+    "use_cache": true,
+    "vocab_size": 256008
+  },
+  "differences": [
+    "BLOOM attention_softmax_in_fp32: True",
+    "XGLM dropout: 0.1"
+  ]
+}

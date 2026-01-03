@@ -1,0 +1,52 @@
+{
+  "experiment": "EXP-025",
+  "results": [
+    {
+      "model": "Pythia-70M",
+      "size_m": 70,
+      "max_kurtosis": 45.03125,
+      "mean_kurtosis": 4.309519450440965,
+      "max_tensor": "gpt_neox.layers.3.attention.query_key_value.weight",
+      "n_tensors": 32,
+      "family": "Pythia"
+    },
+    {
+      "model": "Pythia-160M",
+      "size_m": 160,
+      "max_kurtosis": 28.828125,
+      "mean_kurtosis": 3.0183000482399143,
+      "max_tensor": "gpt_neox.layers.6.attention.query_key_value.weight",
+      "n_tensors": 62,
+      "family": "Pythia"
+    },
+    {
+      "model": "Pythia-410M",
+      "size_m": 410,
+      "max_kurtosis": 73.25,
+      "mean_kurtosis": 2.1996218881328455,
+      "max_tensor": "gpt_neox.layers.14.attention.query_key_value.weight",
+      "n_tensors": 122,
+      "family": "Pythia"
+    },
+    {
+      "model": "OPT-125M",
+      "size_m": 125,
+      "max_kurtosis": 360.0,
+      "mean_kurtosis": 11.057416523972602,
+      "max_tensor": "model.decoder.layers.1.self_attn.out_proj.weight",
+      "n_tensors": 73,
+      "family": "OPT"
+    },
+    {
+      "model": "GPT2-small",
+      "size_m": 124,
+      "max_kurtosis": 5550.79345703125,
+      "mean_kurtosis": 98.12142723606479,
+      "max_tensor": "h.2.mlp.c_proj.weight",
+      "n_tensors": 62,
+      "family": "GPT2"
+    }
+  ],
+  "pythia_verdict": "POSITIVE: larger \u2192 higher \u03ba",
+  "h5_verdict": "H5 REJECTED: larger Pythia has higher \u03ba"
+}

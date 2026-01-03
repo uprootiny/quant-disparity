@@ -1,0 +1,41 @@
+{
+  "Pythia-70M": {
+    "n_layers": 7,
+    "mean_kurtosis": 4.095315033719694,
+    "max_kurtosis": 11.596539756753659,
+    "std_kurtosis": 4.110595093359746,
+    "max_weight": 2.646484375,
+    "outlier_layers": []
+  },
+  "Pythia-160M": {
+    "n_layers": 13,
+    "mean_kurtosis": 3.2508999945741732,
+    "max_kurtosis": 8.600002151685787,
+    "std_kurtosis": 2.482045248573823,
+    "max_weight": 1.6640625,
+    "outlier_layers": [
+      "3"
+    ]
+  },
+  "Pythia-410M": {
+    "n_layers": 25,
+    "mean_kurtosis": 2.232188542263086,
+    "max_kurtosis": 13.844141777001658,
+    "std_kurtosis": 3.2326101761876127,
+    "max_weight": 1.0712890625,
+    "outlier_layers": [
+      "14",
+      "17"
+    ]
+  },
+  "GPT-2-small": {
+    "n_layers": 13,
+    "mean_kurtosis": 18.376847800841695,
+    "max_kurtosis": 92.31009638309479,
+    "std_kurtosis": 29.265984355985744,
+    "max_weight": 8.559924125671387,
+    "outlier_layers": [
+      "1"
+    ]
+  }
+}

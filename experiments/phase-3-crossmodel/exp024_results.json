@@ -1,0 +1,33 @@
+{
+  "experiment": "EXP-024",
+  "models": [
+    {
+      "model": "OPT-125M",
+      "n_layers": 12,
+      "layer_max_kurtosis": {
+        "0": 42.25,
+        "1": 562.0,
+        "2": 80.5625,
+        "3": 49.21875,
+        "4": 7.6640625,
+        "5": 1.82421875,
+        "6": 1.93359375,
+        "7": 1.71484375,
+        "8": 2.265625,
+        "9": 2.23046875,
+        "10": 6.75,
+        "11": 41.125
+      },
+      "correlation_r": -0.46321009688918974,
+      "correlation_p": 0.12937627138059646,
+      "early_max": 562.0,
+      "late_max": 41.125
+    }
+  ],
+  "summary": {
+    "mean_correlation": -0.46321009688918974,
+    "early_higher_count": 1,
+    "late_higher_count": 0,
+    "verdict": "H3 SUPPORTED: early layers have higher kurtosis"
+  }
+}
