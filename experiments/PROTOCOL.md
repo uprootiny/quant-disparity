@@ -19,7 +19,8 @@
 | EXP-006 | 2026-01-02 | BLOOM architecture | shape differs | outlier weights | COMPLETE |
 | EXP-007 | 2026-01-02 | Activation × Outliers | r < -0.5 | r = -0.83 | **CONFIRMED** |
 | EXP-008 | 2026-01-03 | Bootstrap validation | CI excludes 0 | [-0.93,-0.65] | **ROBUST** |
-| EXP-009 | 2026-01-03 | Bit-width sweep | threshold ~ outlier | — | PENDING |
+| EXP-009 | 2026-01-03 | Bit-width sweep | threshold ~ outlier | — | PENDING (GPU) |
+| EXP-009b | 2026-01-03 | Theoretical prediction | r > 0.5 | r = +0.84 | **CONFIRMED** |
 
 ---
 
