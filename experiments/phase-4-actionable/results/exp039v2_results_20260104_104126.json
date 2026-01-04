@@ -1,0 +1,87 @@
+{
+  "experiment_id": "EXP-039-v2",
+  "timestamp": "2026-01-04T10:34:16.747562",
+  "hypothesis": "H-039: Preserving top-k outliers helps low-resource languages more",
+  "interventions": {
+    "0": {
+      "preserved_count": 0,
+      "preserved_pct": 0.0,
+      "degradation": {
+        "en": 0.0,
+        "de": 0.0,
+        "fr": 0.0,
+        "zh": 0.0,
+        "he": 0.0,
+        "ar": 0.0
+      },
+      "high_resource_deg": 0.0,
+      "low_resource_deg": 0.0,
+      "disparity_ratio": Infinity
+    },
+    "0.1": {
+      "preserved_count": 121822,
+      "preserved_pct": 0.09797674822007271,
+      "degradation": {
+        "en": 0.0,
+        "de": 0.0,
+        "fr": 0.0,
+        "zh": 0.0,
+        "he": 0.0,
+        "ar": 0.0
+      },
+      "high_resource_deg": 0.0,
+      "low_resource_deg": 0.0,
+      "disparity_ratio": Infinity
+    },
+    "1": {
+      "preserved_count": 1232088,
+      "preserved_pct": 0.990920981111564,
+      "degradation": {
+        "en": 0.0,
+        "de": 0.0,
+        "fr": 0.0,
+        "zh": 0.0,
+        "he": 0.0,
+        "ar": 0.0
+      },
+      "high_resource_deg": 0.0,
+      "low_resource_deg": 0.0,
+      "disparity_ratio": Infinity
+    },
+    "5": {
+      "preserved_count": 6106352,
+      "preserved_pct": 4.91110400787327,
+      "degradation": {
+        "en": 0.0,
+        "de": 0.0,
+        "fr": 0.0,
+        "zh": 0.0,
+        "he": 0.0,
+        "ar": 0.0
+      },
+      "high_resource_deg": 0.0,
+      "low_resource_deg": 0.0,
+      "disparity_ratio": Infinity
+    },
+    "10": {
+      "preserved_count": 12335410,
+      "preserved_pct": 9.920895731159948,
+      "degradation": {
+        "en": 0.0,
+        "de": 0.0,
+        "fr": 0.0,
+        "zh": 0.0,
+        "he": 0.0,
+        "ar": 0.0
+      },
+      "high_resource_deg": 0.0,
+      "low_resource_deg": 0.0,
+      "disparity_ratio": Infinity
+    }
+  },
+  "hypothesis_supported": "False",
+  "correlation": {
+    "r": NaN,
+    "p": NaN
+  }
+}
