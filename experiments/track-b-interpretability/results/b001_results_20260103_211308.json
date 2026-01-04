@@ -1,0 +1,156 @@
+{
+  "experiment_id": "B-001",
+  "timestamp": "2026-01-03T21:10:30.427205",
+  "hypothesis": "H-B1: Different languages activate different circuit subsets",
+  "model_results": {
+    "mBERT": {
+      "num_layers": 12,
+      "num_heads": 12,
+      "total_heads": 144,
+      "universal_count": 36,
+      "specific_count": 24,
+      "mixed_count": 84,
+      "pct_universal": 25.0,
+      "pct_specific": 16.666666666666664,
+      "pct_mixed": 58.333333333333336,
+      "layer_distribution": {
+        "0": {
+          "universal": 2,
+          "specific": 1,
+          "mixed": 9
+        },
+        "1": {
+          "universal": 7,
+          "specific": 1,
+          "mixed": 4
+        },
+        "2": {
+          "universal": 8,
+          "specific": 0,
+          "mixed": 4
+        },
+        "3": {
+          "universal": 6,
+          "specific": 0,
+          "mixed": 6
+        },
+        "4": {
+          "universal": 5,
+          "specific": 0,
+          "mixed": 7
+        },
+        "5": {
+          "universal": 2,
+          "specific": 1,
+          "mixed": 9
+        },
+        "6": {
+          "universal": 1,
+          "specific": 4,
+          "mixed": 7
+        },
+        "7": {
+          "universal": 0,
+          "specific": 1,
+          "mixed": 11
+        },
+        "8": {
+          "universal": 0,
+          "specific": 7,
+          "mixed": 5
+        },
+        "9": {
+          "universal": 0,
+          "specific": 2,
+          "mixed": 10
+        },
+        "10": {
+          "universal": 1,
+          "specific": 1,
+          "mixed": 10
+        },
+        "11": {
+          "universal": 4,
+          "specific": 6,
+          "mixed": 2
+        }
+      },
+      "top_specific_heads": [
+        [
+          8,
+          3,
+          0.6364305818510694
+        ],
+        [
+          1,
+          5,
+          0.5873843586015373
+        ],
+        [
+          11,
+          5,
+          0.5800544479487793
+        ],
+        [
+          11,
+          9,
+          0.5767557438589661
+        ],
+        [
+          10,
+          11,
+          0.5705515284300388
+        ],
+        [
+          11,
+          2,
+          0.5697524577024
+        ],
+        [
+          11,
+          6,
+          0.5690374903525928
+        ],
+        [
+          0,
+          0,
+          0.5689924914518312
+        ],
+        [
+          9,
+          0,
+          0.556877840038739
+        ],
+        [
+          11,
+          4,
+          0.5483175238243396
+        ]
+      ],
+      "language_pair_js": {
+        "en-de": 0.3408087227678392,
+        "en-fr": 0.3822925742919822,
+        "en-es": 0.41839708449514856,
+        "en-zh": 0.33565448507102774,
+        "en-ar": 0.36740330654758235,
+        "en-he": 0.3852617140781152,
+        "de-fr": 0.29179788612131574,
+        "de-es": 0.37496992513592003,
+        "de-zh": 0.393260827802005,
+        "de-ar": 0.3354802742499179,
+        "de-he": 0.3271190723747671,
+        "fr-es": 0.3231509420625517,
+        "fr-zh": 0.32280387859740983,
+        "fr-ar": 0.2629226694129751,
+        "fr-he": 0.3234025921803142,
+        "es-zh": 0.38134187548272275,
+        "es-ar": 0.31876528632346696,
+        "es-he": 0.31835186785793446,
+        "zh-ar": 0.3177942001627143,
+        "zh-he": 0.4008146390504502,
+        "ar-he": 0.2975805577890077
+      },
+      "h_b1_supported": true
+    }
+  }
+}
