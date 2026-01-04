@@ -1,0 +1,31 @@
+title: Quantization Disparity Research
+description: Understanding why quantization hurts some languages more than others
+url: "https://uprootiny.github.io"
+baseurl: "/quant-disparity"
+
+theme: minima
+
+header_pages:
+  - index.md
+  - tracks.md
+  - experiments.md
+  - literature.md
+  - methodology.md
+  - roadmap.md
+
+markdown: kramdown
+highlighter: rouge
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+plugins:
+  - jekyll-seo-tag
+
+author:
+  name: Quantization Research Group
+
+social_links:
+  - platform: github
+    user_url: "https://github.com/uprootiny/quant-disparity"

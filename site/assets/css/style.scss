@@ -1,0 +1,142 @@
+---
+---
+
+@import "minima";
+
+// Custom styles for Quantization Disparity Research
+
+// Progress bars
+code {
+  background-color: #f4f4f4;
+  padding: 0.1em 0.3em;
+  border-radius: 3px;
+  font-size: 0.9em;
+}
+
+pre {
+  background-color: #1a1a2e;
+  color: #eee;
+  padding: 1em;
+  border-radius: 5px;
+  overflow-x: auto;
+
+  code {
+    background: none;
+    padding: 0;
+  }
+}
+
+// Tables
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5em 0;
+
+  th, td {
+    padding: 0.75em;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+
+  th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+  }
+
+  tr:hover {
+    background-color: #f5f5f5;
+  }
+}
+
+// Status badges
+strong {
+  &:contains("SUPPORTED") {
+    color: #28a745;
+  }
+  &:contains("REJECTED") {
+    color: #dc3545;
+  }
+  &:contains("MIXED") {
+    color: #ffc107;
+  }
+}
+
+// Track grid on home page
+.track-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5em;
+  margin: 2em 0;
+
+  h3 {
+    margin-top: 0;
+    color: #333;
+    border-bottom: 2px solid #0366d6;
+    padding-bottom: 0.5em;
+  }
+}
+
+// Blockquotes for research questions
+blockquote {
+  border-left: 4px solid #0366d6;
+  margin: 1.5em 0;
+  padding: 0.5em 1em;
+  background-color: #f6f8fa;
+  font-style: italic;
+
+  p {
+    margin: 0;
+  }
+}
+
+// ASCII diagrams
+pre:has(code) {
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Mono', monospace;
+  line-height: 1.4;
+}
+
+// Navigation highlighting
+.site-nav {
+  .page-link {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+// Mobile responsiveness
+@media (max-width: 600px) {
+  table {
+    font-size: 0.85em;
+  }
+
+  .track-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Hypothesis status colors in tables
+td:last-child {
+  &:contains("SUPPORTED") {
+    color: #28a745;
+    font-weight: 600;
+  }
+  &:contains("REJECTED") {
+    color: #dc3545;
+    font-weight: 600;
+  }
+  &:contains("MIXED") {
+    color: #856404;
+    font-weight: 600;
+  }
+  &:contains("Pending") {
+    color: #6c757d;
+    font-style: italic;
+  }
+}
+
+// Footer
+.site-footer {
+  border-top: 1px solid #e8e8e8;
+  padding: 30px 0;
+}
