@@ -1,0 +1,21 @@
+{
+  "id": "B-010",
+  "name": "10% Preservation",
+  "timestamp": "2026-01-04T17:36:06.166681",
+  "model": "gpt2",
+  "preserve_pct": 10,
+  "weights_preserved": 12433766,
+  "weights_preserved_pct_actual": 9.999999678295387,
+  "degradation_pct": {
+    "en": 10100.027447517683,
+    "de": 15624.708327322953,
+    "fr": 7358.805100584371,
+    "zh": 67705.18456220496,
+    "he": 1892790.0228145544,
+    "ar": 1416515.0818827031
+  },
+  "hr_avg_degradation": 11027.846958475004,
+  "lr_avg_degradation": 1125670.0964198208,
+  "disparity_ratio": 102.07523741111883,
+  "status": "SUCCESS"
+}

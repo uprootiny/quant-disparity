@@ -1,0 +1,21 @@
+{
+  "id": "A-003",
+  "name": "Disparity Ratio",
+  "timestamp": "2026-01-04T17:33:43.529431",
+  "model": "gpt2",
+  "high_resource_langs": [
+    "en",
+    "de",
+    "fr"
+  ],
+  "low_resource_langs": [
+    "zh",
+    "he",
+    "ar"
+  ],
+  "hr_avg_degradation_pct": 11166.381790534246,
+  "lr_avg_degradation_pct": 990280.0981312984,
+  "disparity_ratio": 88.68406227796724,
+  "status": "SUCCESS",
+  "interpretation": "MASSIVE disparity - low-resource languages severely impacted"
+}

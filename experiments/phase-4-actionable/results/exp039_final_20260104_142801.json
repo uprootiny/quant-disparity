@@ -1,0 +1,49 @@
+{
+  "experiment_id": "EXP-039-final",
+  "timestamp": "2026-01-04T14:28:01.415790",
+  "model": "gpt2",
+  "results": {
+    "0": {
+      "preserved": 0,
+      "preserved_pct": 0.0,
+      "hr_deg": 0.0,
+      "lr_deg": 0.0,
+      "disparity": Infinity
+    },
+    "1": {
+      "preserved": 1243376,
+      "preserved_pct": 0.9999994852726202,
+      "hr_deg": 0.0,
+      "lr_deg": 0.0,
+      "disparity": Infinity
+    },
+    "5": {
+      "preserved": 6216886,
+      "preserved_pct": 5.000002251932287,
+      "hr_deg": 0.0,
+      "lr_deg": 0.0,
+      "disparity": Infinity
+    },
+    "10": {
+      "preserved": 12433766,
+      "preserved_pct": 9.999999678295387,
+      "hr_deg": 0.0,
+      "lr_deg": 0.0,
+      "disparity": Infinity
+    },
+    "20": {
+      "preserved": 24867536,
+      "preserved_pct": 20.0000025736369,
+      "hr_deg": 0.0,
+      "lr_deg": 0.0,
+      "disparity": Infinity
+    },
+    "50": {
+      "preserved": 62168837,
+      "preserved_pct": 50.00000402130765,
+      "hr_deg": 0.0,
+      "lr_deg": 0.0,
+      "disparity": Infinity
+    }
+  }
+}
