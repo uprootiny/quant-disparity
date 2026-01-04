@@ -1,0 +1,47 @@
+{
+  "experiment_id": "EXP-037",
+  "timestamp": "2026-01-04T09:15:18.971856",
+  "hypothesis": "H-037: Sparse outliers are easier to fix than dense",
+  "model_summaries": {
+    "GPT-2": {
+      "n_layers": 50,
+      "mean_sparsity_index": 0.16484102606773376,
+      "max_sparsity_index": 0.2948915362358093,
+      "mean_super_weight_ratio": 1.1054515838623047,
+      "max_super_weight_ratio": 1.7970342636108398,
+      "mean_kurtosis": 59.70369742870331,
+      "max_kurtosis": 790.5363159179688,
+      "overall_pattern": "DENSE"
+    },
+    "OPT-125M": {
+      "n_layers": 74,
+      "mean_sparsity_index": 0.16191746294498444,
+      "max_sparsity_index": 0.3066250681877136,
+      "mean_super_weight_ratio": 1.104915738105774,
+      "max_super_weight_ratio": 1.7370821237564087,
+      "mean_kurtosis": 15.25956006630047,
+      "max_kurtosis": 379.37841796875,
+      "overall_pattern": "DENSE"
+    },
+    "Pythia-160M": {
+      "n_layers": 49,
+      "mean_sparsity_index": 0.16556359827518463,
+      "max_sparsity_index": 0.28324639797210693,
+      "mean_super_weight_ratio": 1.0977509021759033,
+      "max_super_weight_ratio": 1.4852018356323242,
+      "mean_kurtosis": 4.636286214906342,
+      "max_kurtosis": 29.534988403320312,
+      "overall_pattern": "DENSE"
+    },
+    "BERT": {
+      "n_layers": 76,
+      "mean_sparsity_index": 0.15655359625816345,
+      "max_sparsity_index": 0.557457447052002,
+      "mean_super_weight_ratio": 1.160408854484558,
+      "max_super_weight_ratio": 2.9451088905334473,
+      "mean_kurtosis": 32.1330584852319,
+      "max_kurtosis": 684.1573486328125,
+      "overall_pattern": "DENSE"
+    }
+  }
+}
