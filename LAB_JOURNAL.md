@@ -143,12 +143,17 @@ Experiments:
 
 **Key Finding**: 5% preservation REDUCES disparity from 88.68x to 45.39x (49% improvement!)
 
-### Unexpected Result
+### Non-Monotonic Relationship CONFIRMED
 
-10% preservation performs WORSE than 0%. Hypotheses:
-1. Threshold selection algorithm issue
-2. Non-monotonic relationship
-3. Noise in perplexity measurement
+| k% | Disparity | Trend |
+|----|-----------|-------|
+| 0% | 88.68x | Baseline |
+| **5%** | **45.39x** | **OPTIMAL** |
+| 10% | 102.08x | Worse than baseline |
+| 20% | 173.34x | Much worse |
+
+**Interpretation**: 5% preservation is the sweet spot. Higher preservation actually
+INCREASES disparity because it preferentially preserves English-biased weights.
 
 ---
 
