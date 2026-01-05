@@ -1,0 +1,20 @@
+{
+  "id": "Exp-002",
+  "name": "English vs Hebrew",
+  "timestamp": "2026-01-05T02:20:16.856443",
+  "duration_sec": 45.803811,
+  "baseline_ppl": {
+    "en": 162.47152709960938,
+    "he": 9.098283767700195
+  },
+  "quantized_ppl": {
+    "en": 7545.50341796875,
+    "he": 88412.4140625
+  },
+  "degradation_pct": {
+    "en": 4544.200465563847,
+    "he": 971648.258461368
+  },
+  "disparity_ratio": 213.8216097253107,
+  "status": "SUCCESS"
+}

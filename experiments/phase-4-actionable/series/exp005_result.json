@@ -1,0 +1,24 @@
+{
+  "id": "Exp-005",
+  "name": "OPT-125M Scaling",
+  "timestamp": "2026-01-05T02:28:04.740262",
+  "duration_sec": 66.123396,
+  "model": "facebook/opt-125m",
+  "parameters": 125239296,
+  "baseline_ppl": {
+    "en": 204.1339874267578,
+    "he": 10.908823013305664
+  },
+  "quantized_ppl": {
+    "en": 11222.296875,
+    "he": 90283.9609375
+  },
+  "degradation_pct": {
+    "en": 5397.515145059565,
+    "he": 827523.2992998348
+  },
+  "disparity_ratio": 153.31560487741856,
+  "gpt2_disparity": 213.82,
+  "pattern_consistent": true,
+  "status": "SUCCESS"
+}

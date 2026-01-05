@@ -1,0 +1,56 @@
+{
+  "id": "Exp-004",
+  "name": "Statistical Validation",
+  "timestamp": "2026-01-05T02:26:04.091338",
+  "duration_sec": 156.74318,
+  "n_trials": 3,
+  "trials": [
+    {
+      "trial": 1,
+      "baseline": {
+        "en": 162.47152709960938,
+        "he": 9.098283767700195
+      },
+      "quantized": {
+        "en": 7545.50341796875,
+        "he": 88412.4140625
+      },
+      "deg_en": 4544.200465563847,
+      "deg_he": 971648.258461368,
+      "disparity": 213.8216097253107
+    },
+    {
+      "trial": 2,
+      "baseline": {
+        "en": 162.47152709960938,
+        "he": 9.098283767700195
+      },
+      "quantized": {
+        "en": 7545.50341796875,
+        "he": 88412.4140625
+      },
+      "deg_en": 4544.200465563847,
+      "deg_he": 971648.258461368,
+      "disparity": 213.8216097253107
+    },
+    {
+      "trial": 3,
+      "baseline": {
+        "en": 162.47152709960938,
+        "he": 9.098283767700195
+      },
+      "quantized": {
+        "en": 7545.50341796875,
+        "he": 88412.4140625
+      },
+      "deg_en": 4544.200465563847,
+      "deg_he": 971648.258461368,
+      "disparity": 213.8216097253107
+    }
+  ],
+  "disparity_mean": 213.8216097253107,
+  "disparity_std": 0.0,
+  "disparity_cv_pct": 0.0,
+  "conclusion": "Disparity is consistent",
+  "status": "SUCCESS"
+}

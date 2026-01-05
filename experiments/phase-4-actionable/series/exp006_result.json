@@ -1,0 +1,27 @@
+{
+  "id": "Exp-006",
+  "name": "Pythia-160M Scaling",
+  "timestamp": "2026-01-05T02:29:25.889860",
+  "duration_sec": 26.125046,
+  "model": "EleutherAI/pythia-160m",
+  "parameters": 162322944,
+  "baseline_ppl": {
+    "en": 77.68213653564453,
+    "he": 23.589982986450195
+  },
+  "quantized_ppl": {
+    "en": 10462168064.0,
+    "he": Infinity
+  },
+  "degradation_pct": {
+    "en": 13467919978.639215,
+    "he": Infinity
+  },
+  "disparity_ratio": Infinity,
+  "cross_model": {
+    "gpt2": 213.82,
+    "opt125m": 153.32,
+    "pythia160m": Infinity
+  },
+  "status": "SUCCESS"
+}

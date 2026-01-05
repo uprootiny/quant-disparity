@@ -1,0 +1,11 @@
+{
+  "id": "Exp-001",
+  "name": "English Baseline",
+  "timestamp": "2026-01-05T02:18:47.337955",
+  "duration_sec": 34.835919,
+  "language": "en",
+  "baseline_ppl": 162.47152709960938,
+  "quantized_ppl": 7545.50341796875,
+  "degradation_pct": 4544.200465563847,
+  "status": "SUCCESS"
+}
