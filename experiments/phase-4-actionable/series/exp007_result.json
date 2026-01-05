@@ -1,0 +1,37 @@
+{
+  "id": "Exp-007",
+  "name": "OPT-125M Preservation",
+  "timestamp": "2026-01-05T11:03:01.981599",
+  "duration_sec": 120.012413,
+  "model": "facebook/opt-125m",
+  "results": {
+    "0": {
+      "kept": 0,
+      "disparity": 153.31560487741856,
+      "deg": {
+        "en": 5397.515145059565,
+        "he": 827523.2992998348
+      }
+    },
+    "5": {
+      "kept": 6268465,
+      "disparity": 128.62489675589177,
+      "deg": {
+        "en": 3670.87772763373,
+        "he": 472166.26872039115
+      }
+    },
+    "10": {
+      "kept": 12536020,
+      "disparity": 172.6838714262237,
+      "deg": {
+        "en": 3612.4262480728803,
+        "he": 623807.749758933
+      }
+    }
+  },
+  "optimal_k": 5,
+  "gpt2_optimal": 5,
+  "pattern_consistent": true,
+  "status": "SUCCESS"
+}

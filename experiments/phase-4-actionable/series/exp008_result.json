@@ -1,0 +1,36 @@
+{
+  "id": "Exp-008",
+  "name": "Arabic Addition",
+  "timestamp": "2026-01-05T11:04:27.843379",
+  "duration_sec": 43.847054,
+  "scripts_tested": [
+    "Latin",
+    "Hebrew",
+    "Arabic"
+  ],
+  "baseline_ppl": {
+    "en": 162.47152709960938,
+    "he": 9.098283767700195,
+    "ar": 18.521150588989258
+  },
+  "quantized_ppl": {
+    "en": 7545.50341796875,
+    "he": 88412.4140625,
+    "ar": 69026.796875
+  },
+  "degradation_pct": {
+    "en": 4544.200465563847,
+    "he": 971648.258461368,
+    "ar": 372591.73177629756
+  },
+  "disparity_vs_en": {
+    "he": 213.8216097253107,
+    "ar": 81.99280260627019
+  },
+  "rtl_comparison": {
+    "hebrew_deg": 971648.258461368,
+    "arabic_deg": 372591.73177629756,
+    "hebrew_arabic_ratio": 2.6078095019154675
+  },
+  "status": "SUCCESS"
+}
