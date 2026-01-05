@@ -1,0 +1,34 @@
+{
+  "id": "Exp-010",
+  "name": "Full Preservation",
+  "timestamp": "2026-01-05T11:10:17.414242",
+  "duration_sec": 150.837765,
+  "languages": [
+    "en",
+    "de",
+    "fr",
+    "zh",
+    "he",
+    "ar"
+  ],
+  "results": {
+    "0": {
+      "hr_avg": 1611.4251915170296,
+      "lr_avg": 238564.02723322358,
+      "disparity": 148.0453628806897
+    },
+    "5": {
+      "hr_avg": 1851.323327656473,
+      "lr_avg": 231494.5048301527,
+      "disparity": 125.04272018394198
+    },
+    "10": {
+      "hr_avg": 2459.620112796649,
+      "lr_avg": 379560.3661520367,
+      "disparity": 154.31666222653675
+    }
+  },
+  "optimal_k": 5,
+  "disparity_reduction_pct": 15.537563790691397,
+  "status": "SUCCESS"
+}
