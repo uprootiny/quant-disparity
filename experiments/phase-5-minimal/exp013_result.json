@@ -1,0 +1,65 @@
+{
+  "id": "Exp-013",
+  "name": "Hybrid Protection",
+  "timestamp": "2026-01-08T00:55:30.014201",
+  "duration_sec": 136.65262,
+  "results": {
+    "none": {
+      "layer0": false,
+      "mlp_k": 0,
+      "protected": 0,
+      "protected_pct": 0.0,
+      "disparity": 277.4910476020637
+    },
+    "layer0_only": {
+      "layer0": true,
+      "mlp_k": 0,
+      "protected": 7079424,
+      "protected_pct": 5.693708384291344,
+      "disparity": 55.53349028278564
+    },
+    "layer0+mlp1%": {
+      "layer0": true,
+      "mlp_k": 1,
+      "protected": 58983936,
+      "protected_pct": 47.438510667210224,
+      "disparity": 1.4307725836882499
+    },
+    "layer0+mlp2%": {
+      "layer0": true,
+      "mlp_k": 2,
+      "protected": 58983936,
+      "protected_pct": 47.438510667210224,
+      "disparity": 1.4307725836882499
+    },
+    "layer0+mlp5%": {
+      "layer0": true,
+      "mlp_k": 5,
+      "protected": 58983936,
+      "protected_pct": 47.438510667210224,
+      "disparity": 1.4307725836882499
+    },
+    "layer0+mlp10%": {
+      "layer0": true,
+      "mlp_k": 10,
+      "protected": 58983936,
+      "protected_pct": 47.438510667210224,
+      "disparity": 1.4307725836882499
+    },
+    "mlp5%_only": {
+      "layer0": false,
+      "mlp_k": 5,
+      "protected": 56623104,
+      "protected_pct": 45.53978430863877,
+      "disparity": 19.79228066853944
+    },
+    "mlp10%_only": {
+      "layer0": false,
+      "mlp_k": 10,
+      "protected": 56623104,
+      "protected_pct": 45.53978430863877,
+      "disparity": 19.79228066853944
+    }
+  },
+  "status": "SUCCESS"
+}
