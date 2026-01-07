@@ -1,0 +1,85 @@
+{
+  "id": "Exp-012",
+  "name": "Layer-Specific Protection",
+  "timestamp": "2026-01-08T00:50:40.983535",
+  "duration_sec": 107.722871,
+  "layer_weights": {
+    "embeddings": 39383808,
+    "layer_0": 7079424,
+    "layer_1": 7079424,
+    "layer_2": 7079424,
+    "layer_3": 7079424,
+    "layer_4": 7079424,
+    "layer_5": 7079424,
+    "layer_6": 7079424,
+    "layer_7": 7079424,
+    "layer_8": 7079424,
+    "layer_9": 7079424,
+    "layer_10": 7079424,
+    "layer_11": 7079424,
+    "final_ln": 768
+  },
+  "total_weights": 124337664,
+  "results": {
+    "none": {
+      "patterns": [],
+      "protected": 0,
+      "protected_pct": 0.0,
+      "disparity": 277.4910476020637
+    },
+    "embeddings": {
+      "patterns": [
+        "wte",
+        "wpe"
+      ],
+      "protected": 39383808,
+      "protected_pct": 31.674881715648123,
+      "disparity": 1215.7999651359169
+    },
+    "layer_0": {
+      "patterns": [
+        "h.0."
+      ],
+      "protected": 7079424,
+      "protected_pct": 5.693708384291344,
+      "disparity": 55.53349028278564
+    },
+    "layer_0+embed": {
+      "patterns": [
+        "wte",
+        "wpe",
+        "h.0."
+      ],
+      "protected": 46463232,
+      "protected_pct": 37.36859009993947,
+      "disparity": 121.29993825579963
+    },
+    "attention_only": {
+      "patterns": [
+        "attn"
+      ],
+      "protected": 28311552,
+      "protected_pct": 22.769892154319386,
+      "disparity": 290.77934820695305
+    },
+    "mlp_only": {
+      "patterns": [
+        "mlp"
+      ],
+      "protected": 56623104,
+      "protected_pct": 45.53978430863877,
+      "disparity": 19.79228066853944
+    },
+    "first_3_layers": {
+      "patterns": [
+        "h.0.",
+        "h.1.",
+        "h.2."
+      ],
+      "protected": 21238272,
+      "protected_pct": 17.081125152874034,
+      "disparity": 51.688085122076124
+    }
+  },
+  "status": "SUCCESS"
+}

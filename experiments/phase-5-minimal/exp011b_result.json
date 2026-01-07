@@ -1,0 +1,39 @@
+{
+  "id": "Exp-011b",
+  "name": "Quick Threshold Sweep",
+  "timestamp": "2026-01-08T00:47:47.198724",
+  "duration_sec": 161.013467,
+  "results": {
+    "0": {
+      "weights": 0,
+      "size_mb": 0.0,
+      "disparity": 277.4910476020637
+    },
+    "1": {
+      "weights": 1243376,
+      "size_mb": 2.486752,
+      "disparity": 214.75826493002148
+    },
+    "2": {
+      "weights": 2486753,
+      "size_mb": 4.973506,
+      "disparity": 246.6652696571093
+    },
+    "3": {
+      "weights": 3730129,
+      "size_mb": 7.460258,
+      "disparity": 334.50966246103695
+    },
+    "4": {
+      "weights": 4973506,
+      "size_mb": 9.947012,
+      "disparity": 460.7452226099328
+    },
+    "5": {
+      "weights": 6216883,
+      "size_mb": 12.433766,
+      "disparity": 767.0054327030468
+    }
+  },
+  "status": "SUCCESS"
+}

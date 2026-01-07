@@ -9,3 +9,11 @@ build/
 .nrepl-*
 .cpcache/
 target/
+
+.env.local
+.env.*.local
+.idea/
+.vscode/
+*.swp
+*.tmp
+reports/
