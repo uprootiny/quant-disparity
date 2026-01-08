@@ -1,0 +1,45 @@
+{
+  "id": "Exp-025",
+  "name": "Embedding Analysis",
+  "timestamp": "2026-01-08T15:43:43.866361",
+  "duration_sec": 29.206719,
+  "results": {
+    "none": {
+      "protected": 0,
+      "disparity": 213.8216097253107,
+      "en_deg": 4544.200465563847,
+      "he_deg": 971648.258461368
+    },
+    "wte_only": {
+      "protected": 38597376,
+      "disparity": 522.0376831110025,
+      "en_deg": 5453.839117318295,
+      "he_deg": 2847109.536864998
+    },
+    "wpe_only": {
+      "protected": 786432,
+      "disparity": 132.81958610700434,
+      "en_deg": 7309.474353886,
+      "he_deg": 970841.3583429016
+    },
+    "both_embed": {
+      "protected": 39383808,
+      "disparity": 520.8977935439748,
+      "en_deg": 5509.657791977148,
+      "he_deg": 2869968.5870232643
+    },
+    "layer0": {
+      "protected": 7087872,
+      "disparity": 5.947131367132492,
+      "en_deg": 5884.174135078882,
+      "he_deg": 34993.95656839732
+    },
+    "layer0_no_embed": {
+      "protected": 7087872,
+      "disparity": 5.947131367132492,
+      "en_deg": 5884.174135078882,
+      "he_deg": 34993.95656839732
+    }
+  },
+  "status": "SUCCESS"
+}
