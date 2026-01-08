@@ -182,16 +182,26 @@ Not all MLP layers are equal. Individual layer protection reveals surprising pat
 
 ## 5. Practical Recommendations
 
-### 5.1 For Practitioners
+### 5.1 For Practitioners (UPDATED)
 
 ```
 Recommended Quantization Pipeline:
 1. Identify Layer 0 weights (5.7% of model)
 2. Keep Layer 0 in FP16
 3. Quantize remaining layers to INT4
-4. Expected: 55x disparity (vs 78-214x baseline)
+4. Expected: 3.8x disparity (vs 79x baseline) - VALIDATED ON 6 LANGUAGES
 5. Overhead: ~14 MB for GPT-2 class models
 ```
+
+**Per-Language Improvements with Layer 0 Protection:**
+
+| Language | Baseline Disparity | With Layer 0 | Improvement |
+|----------|-------------------|--------------|-------------|
+| Hebrew | 214x | 5.9x | 36x better |
+| Arabic | 82x | 1.3x | 63x better |
+| Chinese | 34x | 1.2x | 28x better |
+| German | 2.5x | 0.9x | 3x better |
+| French | 0.6x | 0.3x | 2x better |
 
 ### 5.2 For Maximum Fairness
 
@@ -204,13 +214,18 @@ If near-parity required:
 5. Overhead: ~56 MB for GPT-2 class models
 ```
 
+**Alternative: Avoid Anti-Critical Strategy (11.4% overhead)**
+- Protect Layer 0 + Layer 2 (avoiding anti-critical Layer 1)
+- Achieves 4.8x disparity on GPT-2
+
 ### 5.3 Artifact Distribution
 
-| Artifact Type | Size | Use Case |
-|---------------|------|----------|
-| Pure INT4 model | 62 MB | English-only deployment |
-| +Layer 0 patch | +14 MB | Basic multilingual |
-| +MLP patch | +56 MB | Fair multilingual |
+| Artifact Type | Size | Disparity | Use Case |
+|---------------|------|-----------|----------|
+| Pure INT4 model | 62 MB | 79x | English-only |
+| +Layer 0 patch | +14 MB | **3.8x** | Multilingual (recommended) |
+| +Avoid-anti patch | +28 MB | 4.8x | Enhanced multilingual |
+| +MLP patch | +56 MB | 1.4x | Maximum fairness |
 
 ---
 
