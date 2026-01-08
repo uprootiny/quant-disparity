@@ -1,0 +1,81 @@
+{
+  "id": "Exp-021",
+  "name": "Combined Critical Layers",
+  "timestamp": "2026-01-08T15:24:23.422987",
+  "duration_sec": 154.895283,
+  "results": {
+    "gpt2": {
+      "results": {
+        "none": {
+          "protected": 0,
+          "pct": 0.0,
+          "disparity": 213.8216097253107
+        },
+        "best_mlp": {
+          "protected": 4718592,
+          "pct": 3.791866988415797,
+          "disparity": 138.9803297277108
+        },
+        "best_attn": {
+          "protected": 2359296,
+          "pct": 1.8959334942078985,
+          "disparity": 53.90732334775236
+        },
+        "best_combo": {
+          "protected": 7077888,
+          "pct": 5.687800482623696,
+          "disparity": 16.888091149294404
+        },
+        "layer0_full": {
+          "protected": 7079424,
+          "pct": 5.6890348143256535,
+          "disparity": 5.947131367132492
+        },
+        "avoid_anti": {
+          "protected": 14158848,
+          "pct": 11.378069628651307,
+          "disparity": 4.845644802114111
+        }
+      },
+      "best_strategy": "avoid_anti",
+      "best_disparity": 4.845644802114111
+    },
+    "opt": {
+      "results": {
+        "none": {
+          "protected": 0,
+          "pct": 0.0,
+          "disparity": 153.31560487741856
+        },
+        "best_mlp": {
+          "protected": 4718592,
+          "pct": 3.767660910518053,
+          "disparity": 91.630316367215
+        },
+        "best_attn": {
+          "protected": 2360064,
+          "pct": 1.8844436813186811,
+          "disparity": 101.23437495948042
+        },
+        "best_combo": {
+          "protected": 7078656,
+          "pct": 5.652104591836735,
+          "disparity": 67.18629349872452
+        },
+        "layer0_full": {
+          "protected": 7079424,
+          "pct": 5.65271781789639,
+          "disparity": 45.115685805500576
+        },
+        "avoid_anti": {
+          "protected": 14158848,
+          "pct": 11.30543563579278,
+          "disparity": 23.436983918527872
+        }
+      },
+      "best_strategy": "avoid_anti",
+      "best_disparity": 23.436983918527872
+    }
+  },
+  "status": "SUCCESS"
+}
