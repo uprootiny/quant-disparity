@@ -218,14 +218,19 @@ If near-parity required:
 - Protect Layer 0 + Layer 2 (avoiding anti-critical Layer 1)
 - Achieves 4.8x disparity on GPT-2
 
-### 5.3 Artifact Distribution
+### 5.3 Artifact Distribution (Pareto Optimal)
 
-| Artifact Type | Size | Disparity | Use Case |
-|---------------|------|-----------|----------|
-| Pure INT4 model | 62 MB | 79x | English-only |
-| +Layer 0 patch | +14 MB | **3.8x** | Multilingual (recommended) |
-| +Avoid-anti patch | +28 MB | 4.8x | Enhanced multilingual |
-| +MLP patch | +56 MB | 1.4x | Maximum fairness |
+| Artifact Type | Overhead | Disparity | Use Case |
+|---------------|----------|-----------|----------|
+| Pure INT4 model | 0% | 60.9x | English-only |
+| +Layer 0 LN only | +0.002% | 41.6x | Extreme compression |
+| +Layer 0 Attn | +1.90% | 16.7x | Light multilingual |
+| **+Layer 0 MLP** | **+3.79%** | **4.9x** | **Recommended** |
+| +Layer 0 Full | +5.70% | 3.8x | Best quality |
+| +All MLP | +45.5% | 1.4x | Maximum fairness |
+
+**Optimal choice**: Layer 0 MLP protection (3.79% overhead) achieves 4.9x disparity,
+nearly as good as full Layer 0 (3.8x) with 34% less memory cost.
 
 ---
 
