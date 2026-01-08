@@ -1,0 +1,35 @@
+{
+  "id": "Exp-026",
+  "name": "LayerNorm Analysis",
+  "timestamp": "2026-01-08T15:48:08.303553",
+  "duration_sec": 29.909945,
+  "results": {
+    "none": {
+      "protected": 0,
+      "pct": 0.0,
+      "disparity": 92.55623295091682
+    },
+    "all_ln": {
+      "protected": 38400,
+      "pct": 0.03085829254895668,
+      "disparity": 65.65883610681139
+    },
+    "layer0_ln": {
+      "protected": 3072,
+      "pct": 0.0024686634039165346,
+      "disparity": 69.02375610949575
+    },
+    "layer0": {
+      "protected": 7087872,
+      "pct": 5.6958236386864245,
+      "disparity": 6.023470290376878
+    },
+    "layer0_no_ln": {
+      "protected": 7084800,
+      "pct": 5.693354975282508,
+      "disparity": 15.120089865939713
+    }
+  },
+  "ln_impact": 9.096619575562835,
+  "status": "SUCCESS"
+}
