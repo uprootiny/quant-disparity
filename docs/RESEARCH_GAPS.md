@@ -82,13 +82,16 @@ Specific MLP neurons activate differently for different languages
 
 | Finding | GPT-2 | OPT-125M | Pythia | BLOOM |
 |---------|-------|----------|--------|-------|
-| Disparity exists | ✓ | ✓ | ✓ | - |
-| MLP > Attention | ✓ | - | - | - |
-| Layer 0 efficient | ✓ | - | - | - |
+| Disparity exists | ✓ | ✓ | ✓ | - (RAM) |
+| MLP > Attention | ✓ | ✗ (Attn wins) | - | - |
+| Layer 0 efficient | ✓ | ✓ | - | - |
 | 5% optimal | ✓ | ✓ | - | - |
 | Hybrid works | ✓ | - | - | - |
+| Per-layer MLP | ✓ (L0 best) | ✓ (L11 best) | - | - |
 
-**Target**: Fill in "-" cells
+**Key Finding**: Pattern is MODEL-DEPENDENT. GPT-2 needs MLP protection; OPT needs attention.
+
+**BLOOM Note**: 560M model exceeds 32GB RAM during quantization. Requires GPU or more memory.
 
 ---
 

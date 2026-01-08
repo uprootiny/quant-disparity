@@ -1,0 +1,151 @@
+{
+  "id": "Exp-017",
+  "name": "Per-Layer MLP Analysis",
+  "timestamp": "2026-01-08T13:25:34.685285",
+  "duration_sec": 122.375459,
+  "results": {
+    "gpt2": {
+      "baseline_disparity": 213.8216097253107,
+      "per_layer": {
+        "none": {
+          "disparity": 213.8216097253107,
+          "layer": -1
+        },
+        "layer_0": {
+          "disparity": 138.9803297277108,
+          "delta": 74.84127999759991,
+          "layer": 0
+        },
+        "layer_1": {
+          "disparity": 381.440838331829,
+          "delta": -167.6192286065183,
+          "layer": 1
+        },
+        "layer_2": {
+          "disparity": 151.63250683313836,
+          "delta": 62.18910289217234,
+          "layer": 2
+        },
+        "layer_3": {
+          "disparity": 188.24241960310204,
+          "delta": 25.579190122208672,
+          "layer": 3
+        },
+        "layer_4": {
+          "disparity": 163.45880139200148,
+          "delta": 50.36280833330923,
+          "layer": 4
+        },
+        "layer_5": {
+          "disparity": 162.94560514251282,
+          "delta": 50.87600458279789,
+          "layer": 5
+        },
+        "layer_6": {
+          "disparity": 300.8949710535068,
+          "delta": -87.07336132819611,
+          "layer": 6
+        },
+        "layer_7": {
+          "disparity": 239.96137459496651,
+          "delta": -26.139764869655806,
+          "layer": 7
+        },
+        "layer_8": {
+          "disparity": 254.45078970543685,
+          "delta": -40.62917998012614,
+          "layer": 8
+        },
+        "layer_9": {
+          "disparity": 223.35053083639494,
+          "delta": -9.52892111108423,
+          "layer": 9
+        },
+        "layer_10": {
+          "disparity": 301.20550587905166,
+          "delta": -87.38389615374095,
+          "layer": 10
+        },
+        "layer_11": {
+          "disparity": 278.5003252768041,
+          "delta": -64.67871555149341,
+          "layer": 11
+        }
+      },
+      "most_critical": "layer_0",
+      "least_critical": "layer_1"
+    },
+    "opt": {
+      "baseline_disparity": 153.31560487741856,
+      "per_layer": {
+        "none": {
+          "disparity": 153.31560487741856,
+          "layer": -1
+        },
+        "layer_0": {
+          "disparity": 116.2462007423956,
+          "delta": 37.069404135022964,
+          "layer": 0
+        },
+        "layer_1": {
+          "disparity": 130.67254577555795,
+          "delta": 22.643059101860615,
+          "layer": 1
+        },
+        "layer_2": {
+          "disparity": 160.1876772391757,
+          "delta": -6.872072361757148,
+          "layer": 2
+        },
+        "layer_3": {
+          "disparity": 121.24715840840905,
+          "delta": 32.068446469009515,
+          "layer": 3
+        },
+        "layer_4": {
+          "disparity": 95.49647751864048,
+          "delta": 57.81912735877809,
+          "layer": 4
+        },
+        "layer_5": {
+          "disparity": 118.77110332459048,
+          "delta": 34.54450155282808,
+          "layer": 5
+        },
+        "layer_6": {
+          "disparity": 187.83703036396574,
+          "delta": -34.52142548654717,
+          "layer": 6
+        },
+        "layer_7": {
+          "disparity": 245.3326402156065,
+          "delta": -92.01703533818792,
+          "layer": 7
+        },
+        "layer_8": {
+          "disparity": 205.815435323271,
+          "delta": -52.49983044585244,
+          "layer": 8
+        },
+        "layer_9": {
+          "disparity": 180.30789226862464,
+          "delta": -26.992287391206077,
+          "layer": 9
+        },
+        "layer_10": {
+          "disparity": 180.54807777110724,
+          "delta": -27.23247289368868,
+          "layer": 10
+        },
+        "layer_11": {
+          "disparity": 91.630316367215,
+          "delta": 61.68528851020356,
+          "layer": 11
+        }
+      },
+      "most_critical": "layer_11",
+      "least_critical": "layer_7"
+    }
+  },
+  "status": "SUCCESS"
+}

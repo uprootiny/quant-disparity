@@ -149,6 +149,35 @@ Hypothesis: Embeddings are already well-distributed across languages; protecting
 
 Higher preservation can increase disparity because magnitude-based selection preferentially protects **English-optimized** weights.
 
+### 4.4 Per-Layer MLP Criticality (Exp-017)
+
+Not all MLP layers are equal. Individual layer protection reveals surprising patterns:
+
+**GPT-2 (Per-Layer MLP Protection):**
+
+| Layer | Disparity | Delta vs None | Effect |
+|-------|-----------|---------------|--------|
+| 0 | 139x | -75 | **Best** |
+| 2 | 152x | +62 | Good |
+| 4-5 | 163x | +50 | Moderate |
+| **1** | **381x** | **-168** | **HARMFUL** |
+| 6, 10 | 301x | -87 | Harmful |
+
+**OPT-125M (Per-Layer MLP Protection):**
+
+| Layer | Disparity | Delta vs None | Effect |
+|-------|-----------|---------------|--------|
+| **11** | **92x** | **+62** | **Best** |
+| 4 | 96x | +58 | Very good |
+| 0, 5 | 117x | +37 | Good |
+| **7** | **245x** | **-92** | **HARMFUL** |
+
+**Key Insight**: Protecting certain layers **increases** disparity. GPT-2 Layer 1 and OPT Layer 7 are "anti-critical" - their protection causes worse multilingual behavior.
+
+**Interpretation**:
+- GPT-2: Early layers (0, 2) encode language-agnostic features; Layer 1 may encode English-specific patterns
+- OPT: Final layer (11) handles language-specific output projection; Layer 7 may be English-specialized
+
 ---
 
 ## 5. Practical Recommendations
