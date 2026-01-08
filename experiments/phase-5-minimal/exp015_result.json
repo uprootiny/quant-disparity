@@ -1,0 +1,64 @@
+{
+  "id": "Exp-015",
+  "name": "Text Length Sensitivity",
+  "timestamp": "2026-01-08T13:10:37.731103",
+  "duration_sec": 23.132393,
+  "results": {
+    "short": {
+      "en_tokens": 3,
+      "he_tokens": 7,
+      "baseline": {
+        "en": 3648.23828125,
+        "he": 37.197452545166016
+      },
+      "quantized": {
+        "en": 2314.959716796875,
+        "he": 15115.298828125
+      },
+      "degradation": {
+        "en": -36.545819150724505,
+        "he": 40535.30643602986
+      },
+      "disparity": Infinity
+    },
+    "medium": {
+      "en_tokens": 10,
+      "he_tokens": 47,
+      "baseline": {
+        "en": 162.47152709960938,
+        "he": 9.098283767700195
+      },
+      "quantized": {
+        "en": 7545.50341796875,
+        "he": 88412.4140625
+      },
+      "degradation": {
+        "en": 4544.200465563847,
+        "he": 971648.258461368
+      },
+      "disparity": 213.8216097253107
+    },
+    "long": {
+      "en_tokens": 24,
+      "he_tokens": 91,
+      "baseline": {
+        "en": 33.89951705932617,
+        "he": 9.2228422164917
+      },
+      "quantized": {
+        "en": 4632.4921875,
+        "he": 247397.515625
+      },
+      "degradation": {
+        "en": 13565.363371970352,
+        "he": 2682343.327314215
+      },
+      "disparity": 197.73471994540517
+    }
+  },
+  "mean_disparity": Infinity,
+  "std_disparity": NaN,
+  "cv_pct": NaN,
+  "conclusion": "HIGH VARIANCE - Disparity measurement is text-length dependent",
+  "status": "SUCCESS"
+}

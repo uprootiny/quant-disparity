@@ -1,0 +1,36 @@
+{
+  "id": "Exp-014",
+  "name": "OPT-125M Layers",
+  "timestamp": "2026-01-08T13:08:47.131702",
+  "duration_sec": 30.655418,
+  "model": "facebook/opt-125m",
+  "results": {
+    "none": {
+      "protected": 0,
+      "pct": 0.0,
+      "disparity": 42.49708814924056
+    },
+    "embeddings": {
+      "protected": 40183296,
+      "pct": 32.11140365412823,
+      "disparity": 25.411842617648148
+    },
+    "attention": {
+      "protected": 28320768,
+      "pct": 22.63178244619152,
+      "disparity": 7.318102939706227
+    },
+    "mlp": {
+      "protected": 56623104,
+      "pct": 45.248835453758765,
+      "disparity": 15.382131941005506
+    },
+    "layer0": {
+      "protected": 7079424,
+      "pct": 5.657331884938535,
+      "disparity": 12.72192096006345
+    }
+  },
+  "pattern_match": false,
+  "status": "SUCCESS"
+}
