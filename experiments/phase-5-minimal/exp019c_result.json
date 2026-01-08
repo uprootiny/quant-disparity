@@ -1,0 +1,30 @@
+{
+  "id": "Exp-019c",
+  "name": "Pythia Diagnostic",
+  "timestamp": "2026-01-08T14:45:17.612538",
+  "duration_sec": 24.580003,
+  "baseline": {
+    "en": {
+      "ppl": 1317.658203125,
+      "loss": 7.1836113929748535
+    },
+    "he": {
+      "ppl": 64.22785186767578,
+      "loss": 4.1624369621276855
+    }
+  },
+  "quantized": {
+    "en": {
+      "ppl": 738888581120.0,
+      "loss": 27.328413009643555
+    },
+    "he": {
+      "ppl": Infinity,
+      "loss": 278.59130859375
+    }
+  },
+  "en_degradation": 56075891156.748405,
+  "he_degradation": Infinity,
+  "disparity": Infinity,
+  "status": "SUCCESS"
+}

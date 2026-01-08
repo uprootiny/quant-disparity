@@ -1,0 +1,123 @@
+{
+  "id": "Exp-020",
+  "name": "Per-Layer Attention",
+  "timestamp": "2026-01-08T15:12:43.375516",
+  "duration_sec": 320.527469,
+  "results": {
+    "gpt2": {
+      "baseline_disparity": 213.8216097253107,
+      "layer_results": {
+        "layer_0": {
+          "disparity": 53.90732334775236,
+          "delta": 159.91428637755834
+        },
+        "layer_1": {
+          "disparity": 420.93302698321594,
+          "delta": -207.11141725790523
+        },
+        "layer_2": {
+          "disparity": 114.29369362114757,
+          "delta": 99.52791610416314
+        },
+        "layer_3": {
+          "disparity": 171.85448801665675,
+          "delta": 41.96712170865396
+        },
+        "layer_4": {
+          "disparity": 302.52596576819445,
+          "delta": -88.70435604288375
+        },
+        "layer_5": {
+          "disparity": 198.8818572298145,
+          "delta": 14.939752495496208
+        },
+        "layer_6": {
+          "disparity": 190.19390506840463,
+          "delta": 23.627704656906076
+        },
+        "layer_7": {
+          "disparity": 192.51167755065703,
+          "delta": 21.30993217465368
+        },
+        "layer_8": {
+          "disparity": 210.0174875464335,
+          "delta": 3.8041221788772077
+        },
+        "layer_9": {
+          "disparity": 267.0087696510513,
+          "delta": -53.18715992574059
+        },
+        "layer_10": {
+          "disparity": 254.49453298369139,
+          "delta": -40.67292325838068
+        },
+        "layer_11": {
+          "disparity": 246.7536754069912,
+          "delta": -32.932065681680484
+        }
+      },
+      "best_layer": "layer_0",
+      "worst_layer": "layer_1",
+      "best_disparity": 53.90732334775236,
+      "worst_disparity": 420.93302698321594
+    },
+    "opt": {
+      "baseline_disparity": 153.31560487741856,
+      "layer_results": {
+        "layer_0": {
+          "disparity": 101.23437495948042,
+          "delta": 52.081229917938145
+        },
+        "layer_1": {
+          "disparity": 116.77043680603337,
+          "delta": 36.54516807138519
+        },
+        "layer_2": {
+          "disparity": 147.60507896646655,
+          "delta": 5.710525910952015
+        },
+        "layer_3": {
+          "disparity": 158.19297186975223,
+          "delta": -4.877366992333663
+        },
+        "layer_4": {
+          "disparity": 151.61148381702677,
+          "delta": 1.704121060391799
+        },
+        "layer_5": {
+          "disparity": 157.9335012821748,
+          "delta": -4.617896404756237
+        },
+        "layer_6": {
+          "disparity": 151.95164931215632,
+          "delta": 1.3639555652622448
+        },
+        "layer_7": {
+          "disparity": 162.29005058285665,
+          "delta": -8.974445705438086
+        },
+        "layer_8": {
+          "disparity": 192.3771803926354,
+          "delta": -39.061575515216845
+        },
+        "layer_9": {
+          "disparity": 152.92382709744834,
+          "delta": 0.39177777997022645
+        },
+        "layer_10": {
+          "disparity": 158.11943013090345,
+          "delta": -4.803825253484888
+        },
+        "layer_11": {
+          "disparity": 138.32103148349688,
+          "delta": 14.994573393921684
+        }
+      },
+      "best_layer": "layer_0",
+      "worst_layer": "layer_8",
+      "best_disparity": 101.23437495948042,
+      "worst_disparity": 192.3771803926354
+    }
+  },
+  "status": "SUCCESS"
+}

@@ -1,0 +1,18 @@
+{
+  "id": "Exp-019b",
+  "name": "Pythia Quick Validation",
+  "timestamp": "2026-01-08T14:44:00.077825",
+  "duration_sec": 96.769824,
+  "model": "EleutherAI/pythia-160m",
+  "results": {
+    "none": Infinity,
+    "layer_0": Infinity,
+    "layer_5": Infinity,
+    "layer_11": Infinity,
+    "mlp": Infinity,
+    "attention": Infinity
+  },
+  "component_winner": "Attention",
+  "layer_pattern": "Late",
+  "status": "SUCCESS"
+}
