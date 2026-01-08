@@ -88,7 +88,9 @@ W_dequant = W_quant * scale
 | Arabic | ar | +372,592% | 59.2x |
 | Hebrew | he | +971,648% | **154.4x** |
 
-### 3.3 RQ2: Component Criticality (Surprising Finding)
+### 3.3 RQ2: Component Criticality (Model-Dependent!)
+
+**GPT-2 Results:**
 
 | Component | % of Model | Protection Effect | Efficiency |
 |-----------|------------|-------------------|------------|
@@ -97,7 +99,17 @@ W_dequant = W_quant * scale
 | **MLP only** | 45.5% | **Best (20x)** | +5.7 |
 | **Layer 0** | 5.7% | Good (55x) | **+39.0** |
 
-**Key insight**: MLP layers are more critical than attention or embeddings for multilingual fairness.
+**OPT-125M Results (DIFFERENT PATTERN!):**
+
+| Component | % of Model | Protection Effect |
+|-----------|------------|-------------------|
+| None | 0% | 42.5x (baseline) |
+| **Attention only** | 22.6% | **Best (7.3x)** |
+| Layer 0 | 5.7% | Good (12.7x) |
+| MLP only | 45.2% | 15.4x |
+| Embeddings | 32.1% | 25.4x |
+
+**Key insight**: Component criticality is **MODEL-DEPENDENT**. GPT-2 needs MLP protection; OPT-125M needs attention protection.
 
 ### 3.4 RQ3: Minimal Intervention Strategies
 
@@ -173,7 +185,30 @@ If near-parity required:
 
 ---
 
-## 6. Limitations
+## 6. Reproducibility
+
+### 6.1 Statistical Robustness (Exp-016)
+
+| Model | Runs | Mean Disparity | Std | CV |
+|-------|------|----------------|-----|-----|
+| GPT-2 | 3 | 213.8x | 0.0x | 0.0% |
+| OPT-125M | 3 | 153.3x | 0.0x | 0.0% |
+
+**Conclusion**: Deterministic quantization produces perfectly reproducible results.
+
+### 6.2 Text Length Sensitivity (Exp-015)
+
+| Text Length | Tokens (en/he) | Disparity |
+|-------------|----------------|-----------|
+| Short | 3/7 | ∞ (unreliable) |
+| Medium | 10/47 | 213.8x |
+| Long | 24/91 | 197.7x |
+
+**Conclusion**: Short texts (<10 tokens) produce unreliable results. Medium-to-long texts are consistent (±8%).
+
+---
+
+## 7. Limitations
 
 1. **Model scale**: Only tested on <200M parameter models
 2. **Quantization method**: Simulated quantization, not GPTQ/AWQ
