@@ -1,7 +1,7 @@
 # Experiment Index
 
 *Phase 5: Minimal Intervention Analysis*
-*74 experiments completed*
+*80 experiments completed*
 
 ## Quick Reference
 
@@ -65,6 +65,12 @@
 | 072 | Triple layer optimal | **L0+L9+L11=0.40x** best! | ✓ |
 | 073 | L0+L9+L11 validation | 0.70x avg across 6 langs | ✓ |
 | 074 | Final summary | **0.60x avg across 8 langs** | ✓ |
+| 075 | OPT triple layers | L4+L6+L11=12.7x for OPT | ✓ |
+| 076 | L9 analysis | 75% depth consolidation point | ✓ |
+| 077 | 4-layer combos | L0+L8+L9+L11=0.30x (diminishing) | ✓ |
+| 078 | Precision study | INT4 optimal, INT2 too aggressive | ✓ |
+| 079 | Mixed precision | INT8 critical viable (0.51x) | ✓ |
+| 080 | **Final validation** | **0.59x across 10 languages!** | ✓ |
 
 ---
 
@@ -290,4 +296,4 @@ MEMORY_CONSTRAINTS.md        # System memory limits
 
 ---
 
-*Last updated: 2026-01-09 (74 experiments)*
+*Last updated: 2026-01-09 (80 experiments)*
