@@ -1,7 +1,7 @@
 # Experiment Index
 
 *Phase 5: Minimal Intervention Analysis*
-*51 experiments completed*
+*58 experiments completed*
 
 ## Quick Reference
 
@@ -48,6 +48,11 @@
 | 049 | Quant error | Criticality != error magnitude | ✓ |
 | 050 | Embedding interaction | ln_f helps, embeddings hurt | ✓ |
 | 051 | Optimal config | L0+L11+ln_f+biases = 3.4x | ✓ |
+| 052-053 | Mixed precision | INT4 sweet spot confirmed | ✓ |
+| 054 | Head granularity | L11 V weights 3x larger | ✓ |
+| 055 | Random protection | Random fails (44-327x vs 0.0x) | ✓ |
+| 056 | Magnitude selection | FAILS: 125,480x (wrong weights) | ✓ |
+| 057-058 | Variance analysis | r=-0.798 variance-disparity | ✓ |
 
 ---
 
@@ -141,6 +146,18 @@ L0 is the ONLY layer that enables synergy:
 - Biases are only 0.082% of model
 - Quantizing biases adds +52.6x disparity
 - Recommendation: Keep ALL biases in FP16
+
+### 13. Structure > Heuristics (Exp-055, 056)
+- Random 11.4% protection: 44-327x (fails)
+- Magnitude-based 38.6%: 125,480x (catastrophic!)
+- L0+L11 11.4%: 0.0x (perfect)
+- Simple heuristics protect WRONG weights
+
+### 14. Variance Predicts Criticality (Exp-057, 058)
+- r = -0.798 correlation: high variance = low disparity
+- L0: highest variance (0.021), lowest disparity (2.6x)
+- L2: lowest variance (0.008), highest disparity (795x)
+- **Theory**: High-variance layers encode more multilingual information
 
 ---
 
