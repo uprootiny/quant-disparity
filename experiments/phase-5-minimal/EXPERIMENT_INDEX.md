@@ -1,7 +1,7 @@
 # Experiment Index
 
 *Phase 5: Minimal Intervention Analysis*
-*34 experiments completed*
+*43 experiments completed*
 
 ## Quick Reference
 
@@ -33,6 +33,13 @@
 | 033 | OPT synergy | L0+L11 synergy +29.3x | ✓ |
 | 034 | Multi-lang synergy | He 284x better | ✓ |
 | 035 | Layer pairs | OOM | ⚠ |
+| 036 | Triple layers | L0+L11 optimal, adding more doesn't help | ✓ |
+| 038 | Attention components | L0 QKV > proj, L11 opposite | ✓ |
+| 039 | Bias analysis | Biases +52.6x when quantized | ✓ |
+| 040 | Optimal minimal | L0+L11+biases = 11.4x | ✓ |
+| 041 | MLP depth | L11 MLP harmful (306.9x) | ✓ |
+| 042 | Synergy test | L0+L11 = 0.0x, L0 enables synergy | ✓ |
+| 043 | L0 necessity | L0 irreplaceable, L2+L11 = 4749.8x | ✓ |
 
 ---
 
@@ -111,6 +118,20 @@ With L0+L11 strategy (11.4% overhead):
 - Hebrew: 213.8x → 0.8x (**284x better**)
 - Chinese: 33.6x → 0.3x (**121x better**)
 - Arabic: 82.0x → 0.7x (**118x better**)
+
+### 11. L0 is Uniquely Essential (Exp-042, 043)
+L0 is the ONLY layer that enables synergy:
+- L0+L11: **0.0x** (perfect multilingual fairness!)
+- L2+L11: 4749.8x (catastrophic)
+- L4+L11: 150.9x
+- L8+L11: 195.7x
+
+**Theory**: L0 encodes foundational multilingual representations that all downstream layers depend on.
+
+### 12. Biases Matter (Exp-039)
+- Biases are only 0.082% of model
+- Quantizing biases adds +52.6x disparity
+- Recommendation: Keep ALL biases in FP16
 
 ---
 
