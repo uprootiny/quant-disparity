@@ -1,7 +1,7 @@
 # Experiment Index
 
 *Phase 5: Minimal Intervention Analysis*
-*64 experiments completed*
+*69 experiments completed*
 
 ## Quick Reference
 
@@ -56,6 +56,10 @@
 | 059 | Token fertility | Structure > token count | ✓ |
 | 060 | Final validation | 1.04x disparity achieved! | ✓ |
 | 061-064 | OPT-125M analysis | Architecture-specific patterns | ✓ |
+| 065 | Variance selection | Top-3 variance achieves 1.95x | ✓ |
+| 066 | L0 uniqueness | L0=#1 outliers, sparsity | ✓ |
+| 067-068 | Combined predictor | Works GPT-2, fails OPT | ✓ |
+| 069 | Quick sweep method | L0+L10=1.6x (practical tool) | ✓ |
 
 ---
 
@@ -176,6 +180,29 @@ OPT-125M shows fundamentally different behavior:
 
 **Conclusion**: Layer criticality is model-specific. Use variance analysis to identify critical layers for each architecture.
 
+### 16. L0 Uniqueness Explained (Exp-065, 066)
+L0 is special due to multiple factors, not just variance:
+- **#1 in outlier ratio** (1.726% vs 1.173% for L1)
+- **#1 in sparsity** (10.2% vs 9.4% for L1)
+- **#3 in variance** (0.021)
+- Position as input gateway to all subsequent layers
+
+Combined predictor (position + variance + outliers + sparsity):
+- GPT-2: Successfully identifies L0+L11 (3.38x)
+- OPT-125M: Fails - selects L0+L1 (3886.9x vs best 195.4x)
+
+### 17. Quick Sweep Method (Exp-069)
+**Practical tool for any model:**
+1. Single-layer protection sweep with En + LR text
+2. Rank by disparity (lower = more critical)
+3. Protect top-2 layers
+
+Results:
+- GPT-2: **L0+L10 = 1.6x** (better than L0+L11!)
+- OPT-125M: L4+L7 = 321.5x (reasonable for OPT)
+
+Method works in ~30 seconds, no architecture assumptions.
+
 ---
 
 ## Experiment Details
@@ -243,4 +270,4 @@ MEMORY_CONSTRAINTS.md        # System memory limits
 
 ---
 
-*Last updated: 2026-01-09 (64 experiments)*
+*Last updated: 2026-01-09 (69 experiments)*
