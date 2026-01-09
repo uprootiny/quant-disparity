@@ -1,7 +1,7 @@
 # Experiment Index
 
 *Phase 5: Minimal Intervention Analysis*
-*43 experiments completed*
+*51 experiments completed*
 
 ## Quick Reference
 
@@ -40,6 +40,14 @@
 | 041 | MLP depth | L11 MLP harmful (306.9x) | ✓ |
 | 042 | Synergy test | L0+L11 = 0.0x, L0 enables synergy | ✓ |
 | 043 | L0 necessity | L0 irreplaceable, L2+L11 = 4749.8x | ✓ |
+| 044 | Precision axis | INT4 sweet spot, INT8 not needed | ✓ |
+| 045 | Length axis | L0+L11 robust across lengths | ✓ |
+| 046 | Language families | Semitic 22x better, CJK 4x better | ✓ |
+| 047 | Resource correlation | r=1.000 perfect correlation | ✓ |
+| 048 | Weight statistics | L0 unique: low outliers, high sparsity | ✓ |
+| 049 | Quant error | Criticality != error magnitude | ✓ |
+| 050 | Embedding interaction | ln_f helps, embeddings hurt | ✓ |
+| 051 | Optimal config | L0+L11+ln_f+biases = 3.4x | ✓ |
 
 ---
 
@@ -47,12 +55,13 @@
 
 | Strategy | Overhead | Avg LR Disparity | Use Case |
 |----------|----------|------------------|----------|
-| none | 0% | 147.9x | Baseline |
+| none | 0% | 206.9x | Baseline |
 | layer0_ln_only | 0.002% | 41.6x | Extreme compression |
 | layer0_attn | 1.90% | 35.0x | Light multilingual |
-| layer0_mlp | 3.79% | 84.1x | (components don't add) |
-| layer0 | 5.70% | **3.6x** | **Efficient** |
-| L0+L11 | 11.38% | **0.7x** | **BEST - LR improves more!** |
+| layer0 | 5.70% | 3.6x | Efficient |
+| L0+L11 | 11.39% | 15.1x | Basic synergy |
+| **L0+L11+ln_f+biases** | **11.46%** | **3.4x** | **RECOMMENDED** |
+| L0+L11+all_ln | 11.42% | 2.6x | Best quality |
 | even_layers | 34.1% | 0.5x | Maximum fairness |
 
 ---
