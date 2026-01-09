@@ -1,7 +1,7 @@
 # Experiment Index
 
 *Phase 5: Minimal Intervention Analysis*
-*27 experiments completed*
+*30 experiments completed*
 
 ## Quick Reference
 
@@ -25,6 +25,11 @@
 | 025 | Embeddings | Token embed harmful | ✓ |
 | 026 | LayerNorm | LN significant | ✓ |
 | 027 | Minimal protection | Pareto frontier | ✓ |
+| 028b | Gradient selection | 0% overlap | ✓ |
+| 029 | Gradient quantization | OOM | ⚠ |
+| 030 | Anti-critical combos | odd=1379x, even=0.5x | ✓ |
+| 031 | Layer 0 breakdown | MLP fc harmful | ✓ |
+| 032 | Output layers | L0+L11=0.7x | ✓ |
 
 ---
 
@@ -32,11 +37,13 @@
 
 | Strategy | Overhead | Avg LR Disparity | Use Case |
 |----------|----------|------------------|----------|
-| none | 0% | 60.9x | Baseline |
+| none | 0% | 147.9x | Baseline |
 | layer0_ln_only | 0.002% | 41.6x | Extreme compression |
-| layer0_attn | 1.90% | 16.7x | Light multilingual |
-| layer0_mlp | 3.79% | **4.9x** | **Recommended** |
-| layer0 | 5.70% | 3.8x | Best quality |
+| layer0_attn | 1.90% | 35.0x | Light multilingual |
+| layer0_mlp | 3.79% | 84.1x | (components don't add) |
+| layer0 | 5.70% | **3.6x** | **Efficient** |
+| L0+L11 | 11.38% | **0.7x** | **BEST - LR improves more!** |
+| even_layers | 34.1% | 0.5x | Maximum fairness |
 
 ---
 
@@ -77,6 +84,23 @@ Layer 0 protection effective across all languages:
 - Hebrew: 214x → 5.9x (36x better)
 - Arabic: 92x → 1.5x (61x better)
 - Chinese: 29x → 0.7x (42x better)
+
+### 7. Anti-Critical Layer Patterns (Exp-030)
+- **Odd layers (L1,L3,L5...) = CATASTROPHIC**: 1379.6x disparity
+- **Even layers (L0,L2,L4...) = EXCELLENT**: 0.5x disparity
+- Same overhead (34.1%), opposite outcomes
+
+### 8. Layer 0 Component Synergy (Exp-031)
+Individual components don't add up:
+- l0_mlp_fc: 151.6x (HARMFUL!)
+- l0_mlp_proj: 36.2x
+- l0_mlp_all: 84.1x
+- l0_full: 3.6x ← **Synergy between components**
+
+### 9. Input-Output Layer Synergy (Exp-032)
+- Layer 0 alone: 3.6x
+- Layer 11 alone: 336.2x (HARMFUL!)
+- **L0 + L11 together: 0.7x** (LR improves MORE than English!)
 
 ---
 
@@ -135,8 +159,14 @@ exp024_ar_zh_focus.py       # Arabic/Chinese focus
 exp025_embedding_analysis.py # Embedding layer
 exp026_layernorm.py         # LayerNorm analysis
 exp027_minimal_protection.py # Pareto optimal
+exp028b_gradient_simple.py   # Gradient vs magnitude selection
+exp029_gradient_quant.py     # Gradient-based quantization (OOM)
+exp030_anti_critical.py      # Anti-critical layer combos
+exp031_layer0_breakdown.py   # Layer 0 fine-grained
+exp032_output_layers.py      # Output layer analysis
+MEMORY_CONSTRAINTS.md        # System memory limits
 ```
 
 ---
 
-*Last updated: 2026-01-08*
+*Last updated: 2026-01-09*
