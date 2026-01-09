@@ -1,7 +1,7 @@
 # Experiment Index
 
 *Phase 5: Minimal Intervention Analysis*
-*69 experiments completed*
+*73 experiments completed*
 
 ## Quick Reference
 
@@ -60,6 +60,10 @@
 | 066 | L0 uniqueness | L0=#1 outliers, sparsity | ✓ |
 | 067-068 | Combined predictor | Works GPT-2, fails OPT | ✓ |
 | 069 | Quick sweep method | L0+L10=1.6x (practical tool) | ✓ |
+| 070 | L10 vs L11 | L0+L11 better on longer texts | ✓ |
+| 071 | Length sensitivity | Short texts misleading | ✓ |
+| 072 | Triple layer optimal | **L0+L9+L11=0.40x** best! | ✓ |
+| 073 | L0+L9+L11 validation | 0.70x avg across 6 langs | ✓ |
 
 ---
 
@@ -71,9 +75,9 @@
 | layer0_ln_only | 0.002% | 41.6x | Extreme compression |
 | layer0_attn | 1.90% | 35.0x | Light multilingual |
 | layer0 | 5.70% | 3.6x | Efficient |
-| L0+L11 | 11.39% | 15.1x | Basic synergy |
-| **L0+L11+ln_f+biases** | **11.46%** | **3.4x** | **RECOMMENDED** |
-| L0+L11+all_ln | 11.42% | 2.6x | Best quality |
+| L0+L11 | 11.46% | 1.04x | Basic synergy |
+| **L0+L11+ln_f+biases** | **11.46%** | **1.04x** | **MINIMUM RECOMMENDED** |
+| **L0+L9+L11+ln_f+biases** | **17.15%** | **0.70x** | **OPTIMAL** |
 | even_layers | 34.1% | 0.5x | Maximum fairness |
 
 ---
@@ -203,6 +207,21 @@ Results:
 
 Method works in ~30 seconds, no architecture assumptions.
 
+### 18. Optimal 3-Layer Configuration (Exp-070-073)
+**L0+L9+L11 is the best 3-layer combination:**
+
+| Config | Overhead | Avg Disparity |
+|--------|----------|---------------|
+| L0+L11 | 11.46% | 1.04x |
+| L0+L9+L11 | 17.15% | 0.70x |
+| L0+L10+L11 | 17.15% | 0.92x |
+
+Key findings:
+- Adding L9 provides 33% improvement over L0+L11
+- **Text length matters**: short texts give misleading results
+- All top 3-layer combos include L11 (confirming L11 essential)
+- Hebrew/Arabic improve most (55-56% better with L9)
+
 ---
 
 ## Experiment Details
@@ -270,4 +289,4 @@ MEMORY_CONSTRAINTS.md        # System memory limits
 
 ---
 
-*Last updated: 2026-01-09 (69 experiments)*
+*Last updated: 2026-01-09 (73 experiments)*
