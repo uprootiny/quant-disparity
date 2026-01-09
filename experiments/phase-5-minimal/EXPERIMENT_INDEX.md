@@ -1,7 +1,7 @@
 # Experiment Index
 
 *Phase 5: Minimal Intervention Analysis*
-*30 experiments completed*
+*34 experiments completed*
 
 ## Quick Reference
 
@@ -30,6 +30,9 @@
 | 030 | Anti-critical combos | odd=1379x, even=0.5x | ✓ |
 | 031 | Layer 0 breakdown | MLP fc harmful | ✓ |
 | 032 | Output layers | L0+L11=0.7x | ✓ |
+| 033 | OPT synergy | L0+L11 synergy +29.3x | ✓ |
+| 034 | Multi-lang synergy | He 284x better | ✓ |
+| 035 | Layer pairs | OOM | ⚠ |
 
 ---
 
@@ -97,10 +100,17 @@ Individual components don't add up:
 - l0_mlp_all: 84.1x
 - l0_full: 3.6x ← **Synergy between components**
 
-### 9. Input-Output Layer Synergy (Exp-032)
+### 9. Input-Output Layer Synergy (Exp-032, 033)
 - Layer 0 alone: 3.6x
 - Layer 11 alone: 336.2x (HARMFUL!)
 - **L0 + L11 together: 0.7x** (LR improves MORE than English!)
+- Cross-architecture: OPT-125M shows +29.3x synergy bonus
+
+### 10. Multi-Language Improvements (Exp-034)
+With L0+L11 strategy (11.4% overhead):
+- Hebrew: 213.8x → 0.8x (**284x better**)
+- Chinese: 33.6x → 0.3x (**121x better**)
+- Arabic: 82.0x → 0.7x (**118x better**)
 
 ---
 
