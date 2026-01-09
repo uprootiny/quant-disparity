@@ -1,7 +1,7 @@
 # Experiment Index
 
 *Phase 5: Minimal Intervention Analysis*
-*73 experiments completed*
+*74 experiments completed*
 
 ## Quick Reference
 
@@ -64,6 +64,7 @@
 | 071 | Length sensitivity | Short texts misleading | ✓ |
 | 072 | Triple layer optimal | **L0+L9+L11=0.40x** best! | ✓ |
 | 073 | L0+L9+L11 validation | 0.70x avg across 6 langs | ✓ |
+| 074 | Final summary | **0.60x avg across 8 langs** | ✓ |
 
 ---
 
@@ -289,4 +290,4 @@ MEMORY_CONSTRAINTS.md        # System memory limits
 
 ---
 
-*Last updated: 2026-01-09 (73 experiments)*
+*Last updated: 2026-01-09 (74 experiments)*
