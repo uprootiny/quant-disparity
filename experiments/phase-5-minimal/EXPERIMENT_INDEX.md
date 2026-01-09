@@ -1,7 +1,7 @@
 # Experiment Index
 
 *Phase 5: Minimal Intervention Analysis*
-*58 experiments completed*
+*64 experiments completed*
 
 ## Quick Reference
 
@@ -53,6 +53,9 @@
 | 055 | Random protection | Random fails (44-327x vs 0.0x) | ✓ |
 | 056 | Magnitude selection | FAILS: 125,480x (wrong weights) | ✓ |
 | 057-058 | Variance analysis | r=-0.798 variance-disparity | ✓ |
+| 059 | Token fertility | Structure > token count | ✓ |
+| 060 | Final validation | 1.04x disparity achieved! | ✓ |
+| 061-064 | OPT-125M analysis | Architecture-specific patterns | ✓ |
 
 ---
 
@@ -159,6 +162,20 @@ L0 is the ONLY layer that enables synergy:
 - L2: lowest variance (0.008), highest disparity (795x)
 - **Theory**: High-variance layers encode more multilingual information
 
+### 15. Cross-Architecture Analysis (Exp-061-064)
+OPT-125M shows fundamentally different behavior:
+- GPT-2's L0+L11 config: 35.6x disparity on OPT (fails!)
+- OPT critical layers: L4 and L9, not L0 and L11
+- Best OPT config achieves only 26.9x disparity vs GPT-2's 1.04x
+- **Root cause**: OPT Layer 0 has 6x lower variance (0.006 vs 0.039)
+
+| Model | Critical Layers | Best Disparity | Key Difference |
+|-------|-----------------|----------------|----------------|
+| GPT-2 | L0 + L11 | 1.04x | High L0 variance (0.039) |
+| OPT-125M | L4 + L9 | 26.91x | Low L0 variance (0.006) |
+
+**Conclusion**: Layer criticality is model-specific. Use variance analysis to identify critical layers for each architecture.
+
 ---
 
 ## Experiment Details
@@ -226,4 +243,4 @@ MEMORY_CONSTRAINTS.md        # System memory limits
 
 ---
 
-*Last updated: 2026-01-09*
+*Last updated: 2026-01-09 (64 experiments)*
