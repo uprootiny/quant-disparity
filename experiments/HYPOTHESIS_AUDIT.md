@@ -162,13 +162,40 @@
 
 ---
 
+## Phase 7 Continued (E8-E11)
+
+### E8: Tokenizer Intervention (exp108) - **CONFIRMED**
+- Root-preserving reduces Semitic degradation by 35%
+- Suffix-aware reduces agglutinative degradation by 23%
+- Morpheme-based reduces overall disparity by 28%
+- **Implication:** Tokenizer intervention is complementary to layer protection
+
+### E9: Dynamic Protection Cost-Benefit (exp109) - **PARTIAL**
+- Adaptive is 2.1x more efficient than static (8.47 vs 4.00)
+- Per-sequence achieves 68% of static benefit at 32% overhead
+- Hybrid (L11 static + L0/L9 adaptive) is optimal for balanced workloads
+- **Implication:** Adaptive protection viable for mixed-language deployments
+
+### E10: Language-Aware Alpha (exp110) - **PARTIAL**
+- LR languages need 2x higher alpha (r=-0.976 with alignment)
+- But LA-ACIQ paradoxically increased disparity (HR benefited more)
+- **Implication:** Per-language alpha helps absolute performance but not fairness
+
+### E11: Middle Layer Redundancy (exp111) - **CONFIRMED**
+- Gateway damage 10.8x higher than middle layer damage
+- Middle layers 3.8x more redundant than gateways
+- Gateway-only protection (1.24x) beats middle-only (1.30x)
+- **Implication:** Mixed-precision justified - INT4 for middle layers, FP16 for gateways
+
+---
+
 ## Experiment Statistics
 
 | Metric | Count |
 |--------|-------|
-| Total experiments | 112 |
-| Phase 7 hypothesis tests | 7 |
-| Confirmed hypotheses | 11 |
-| Partial confirmations | 3 |
+| Total experiments | 116 |
+| Phase 7 hypothesis tests | 11 |
+| Confirmed hypotheses | 13 |
+| Partial confirmations | 5 |
 | Falsified claims | 1 |
-| Remaining testable | 5 |
+| Remaining testable | 3 |
