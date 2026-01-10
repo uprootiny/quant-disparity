@@ -1,7 +1,7 @@
 # Experiment Index
 
 *Phase 5: Minimal Intervention Analysis*
-*80 experiments completed*
+*91 experiments completed*
 
 ## Quick Reference
 
@@ -71,6 +71,15 @@
 | 078 | Precision study | INT4 optimal, INT2 too aggressive | ✓ |
 | 079 | Mixed precision | INT8 critical viable (0.51x) | ✓ |
 | 080 | **Final validation** | **0.59x across 10 languages!** | ✓ |
+| 082 | √3 threshold test | r=-0.901, mechanism differs | ✓ |
+| 087b | Closed-form predictor | R²=0.936, variance key | ✓ |
+| 089 | Morphological analysis | MRLs benefit 9.7x more | ✓ |
+| 090 | T-002 Relative error | H1.2 SUPPORTED | ✓ |
+| 091 | T-005 Gateway structure | L11 z=24.2, UNIQUE | ✓ |
+| 092 | **S-001 Distribution** | **LR 58% higher kurtosis** | ✓ |
+| 093 | **S-003 Phase transition** | **11.5% with L0+L11 crosses 1.0x** | ✓ |
+| 094 | **S-002 Protection formula** | **Closed-form derived!** | ✓ |
+| 095 | **S-005 Layer correlation** | **Synergy is multiplicative** | ✓ |
 
 ---
 
@@ -229,6 +238,29 @@ Key findings:
 - All top 3-layer combos include L11 (confirming L11 essential)
 - Hebrew/Arabic improve most (55-56% better with L9)
 
+### 19. Soudry-Inspired Theoretical Analysis (Exp-092-095)
+
+**Following Soudry's methodology: Distribution First, Find Phase Transition, Derive Formula**
+
+| Finding | Result | Implication |
+|---------|--------|-------------|
+| Distribution divergence | LR 58% higher kurtosis | Heavier tails → more clipping damage |
+| Phase transition | 11.5% with L0+L11 | Structural, not quantitative |
+| Protection formula | R²=0.936 | `score = 2.5×boundary + 1.5×var + 0.8×kurt...` |
+| Synergy mechanism | Multiplicative errors | `disparity ∝ err(L0) × err(L11)` |
+
+**Closed-Form Criticality Score:**
+```
+score(L) = 2.5×is_boundary + 1.5×norm_variance + 0.8×norm_kurtosis
+         + 1.2×norm_outliers + 1.0×is_consolidation - 0.5×distance_from_ends
+```
+
+**Gateway-Bottleneck Model:**
+- L0 (72% modification): Input gateway
+- L9 (42% modification): Bottleneck/consolidation
+- L11 (68% modification): Output gateway
+- Synergy: Clean input × Clean output = Fair
+
 ---
 
 ## Experiment Details
@@ -296,4 +328,4 @@ MEMORY_CONSTRAINTS.md        # System memory limits
 
 ---
 
-*Last updated: 2026-01-09 (80 experiments)*
+*Last updated: 2026-01-10 (95 experiments)*

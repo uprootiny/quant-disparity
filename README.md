@@ -1,116 +1,113 @@
-# quant-disparity
+# Multilingual Quantization Disparity
 
-**Why do multilingual LLMs degrade non-uniformly under quantization?**
+**Why do compressed LLMs hurt low-resource languages disproportionately, and how can we fix it?**
 
-```
-┌────────────────────────────────────────────────────────────────────────────┐
-│  Weight distribution kurtosis predicts quantization sensitivity.           │
-│  High-kurtosis languages need larger clipping thresholds.                  │
-└────────────────────────────────────────────────────────────────────────────┘
-```
+## Key Findings (105 experiments)
 
-## Status
+| Finding | Metric | Source |
+|---------|--------|--------|
+| **L0+L9+L11 protection achieves 0.59x disparity** | 17% overhead | Track A |
+| Alignment predicts degradation | r = -0.956 | Track D |
+| Efficiency trifecta: ALL compression hurts LR | 3.43x avg | Track C |
+| LR languages show 3.3x representation damage | cosine distance | Track B |
+| Head ablation confirms gateway layers | 2.23x sensitivity | Track B |
+| Complex agreement drops 2.80x more for MRLs | accuracy | Track D |
 
-| Phase | Experiments | Status |
-|-------|-------------|--------|
-| Phase 0: Validation | EXP-001, EXP-002 | COMPLETE |
-| Phase 1: Analysis | EXP-003 to EXP-008 | COMPLETE |
-| Phase 2: Corpus | EXP-009b (theory) | COMPLETE |
-| Phase 3: Cross-model | EXP-020 (census) | IN PROGRESS |
-| Phase 4: Algorithm | LA-ACIQ | FUTURE (needs GPU) |
+## The Problem
 
-See [STATUS.md](STATUS.md) for full details.
+Quantized multilingual models show **206x disparity** in perplexity degradation:
+- English: 30% degradation
+- Hebrew: 300%+ degradation
 
-| Experiment | Finding | r | Status |
-|------------|---------|---|--------|
-| EXP-003 | Layer activation × kurtosis | -0.77 | Significant |
-| EXP-007 | Outlier layer activation | **-0.83** | Confirmed |
-| EXP-008 | Bootstrap validation | CI [-0.93,-0.65] | Robust |
+This isn't just perplexity—**grammatical correctness suffers**:
+- Hebrew long-distance agreement: 54% → 28% accuracy under INT4
 
-**Key Finding:** Languages that activate outlier layers (5,21,22) LESS degrade MORE.
+## The Solution: Gateway-Bottleneck Protection
 
-```
-           BLOOM               XGLM
-           ─────               ────
-Layer kurt: 0.96–164.30       0.2–1.9 (near Gaussian)
-W.kurt spread: 5.5            0.06 (uniform)
-Correlation: r=-0.77 **       r=+0.38 n.s.
+```python
+def fair_quantize(model):
+    """Protect critical layers for multilingual fairness."""
+    protect = {0, num_layers - 1}  # L0 + L_last
+    if disparity_target < 0.7:
+        protect.add(int(num_layers * 0.75))  # L_0.75
+    return quantize_except(model, protect)
 ```
 
-**Interpretation:** BLOOM's heavy-tailed weights create language-dependent patterns. XGLM's Gaussian weights don't differentiate.
+**Result:** 0.59x disparity with only 17% compute overhead.
+
+## Research Tracks
+
+| Track | Target Lab | Key Finding |
+|-------|------------|-------------|
+| **A: Gateway-Bottleneck** | Soudry (Technion) | L0+L9+L11 protection algorithm |
+| **B: Interpretability** | Belinkov (Technion) | 3.3x representation damage, causal evidence |
+| **C: Efficiency-Fairness** | Schwartz (HUJI) | Efficiency trifecta, Fair-Efficiency metric |
+| **D: Morphology** | Goldberg (BIU-NLP) | Alignment is the root cause (r=-0.956) |
+
+## Repository Structure
+
+```
+quant-disparity/
+├── experiments/
+│   ├── track-a-main/           # Gateway-bottleneck experiments
+│   ├── track-b-interpretability/  # Belinkov-style circuit analysis
+│   ├── track-c-efficiency/     # Green AI fairness analysis
+│   ├── track-d-syntax/         # Morphological sensitivity
+│   └── CROSS_TRACK_SYNTHESIS.md  # Unified theory
+├── paper/
+│   ├── PAPER_OUTLINE.md        # Full paper structure
+│   └── soudry-prerequisites.md # Math background
+├── gpu-experiments/            # Colab/Kaggle notebooks (validation)
+└── README.md
+```
 
 ## Quick Start
 
 ```bash
-# Run the weight distribution analysis
-cd experiments/phase-0-validation
-python3 distrib_analysis.py
+# Run a cross-track experiment
+cd experiments/track-d-syntax
+python3 exp_d003b_alignment_analysis.py
 
-# Output:
-#   kurtosis      r=+0.916  p<0.0001  [significant]
-#   outlier_ratio r=+0.908  p<0.0001  [significant]
+# Key output:
+#   Alignment vs Degradation: r = -0.956
+#   Hebrew alignment: 0.24, degradation: 264%
+#   English alignment: 0.72, degradation: 47%
 ```
 
-## Core Finding
+## Theoretical Framework
 
-Languages with **high-kurtosis weight distributions** (more outliers) degrade more under quantization because standard clipping (α*/σ ≈ 3.5) removes critical information.
-
-| Regime | Languages | Kurtosis | Optimal α*/σ |
-|--------|-----------|----------|--------------|
-| Low | eng, fra, deu, vie | < 1.0 | ~3.5 |
-| High | ara, heb, jpn, zho, kor, hin, tha | ≥ 1.5 | ~4.3 |
-
-## Structure
-
+### Criticality Score Formula
 ```
-quant-disparity/
-├── README.md                 # This file
-├── PROPOSAL.md               # Research proposal (Soudry Lab)
-├── experiments/
-│   ├── phase-0-validation/   # Mock data validation [current]
-│   ├── phase-1-extraction/   # Real weight extraction [next]
-│   └── phase-2-sensitivity/  # Layer sensitivity matrix [future]
-├── data/
-│   ├── degradation.json      # Marchisio et al. degradation values
-│   ├── samples/              # Per-language text samples
-│   └── weights/              # Extracted weight statistics [future]
-├── docs/
-│   ├── methodology.md        # Banner et al. framework
-│   ├── papers.md             # Literature review
-│   └── friction.md           # Blockers and workarounds
-├── ledgers/
-│   └── decisions.md          # Decision log
-└── src/
-    └── analysis.py           # Reusable analysis functions
+score = 2.5×boundary + 1.5×variance + 0.8×kurtosis
+      + 1.2×outliers + 1.0×consolidation - 0.5×distance
+```
+R² = 0.936 for predicting layer importance.
+
+### Alignment-Gateway-Bottleneck Model
+```
+Tokenization → L0 (Gateway) → L1-L8 → L9 (Bottleneck) → L11 (Gateway) → Output
+     ↓              ↓                       ↓                  ↓
+Poor alignment   2.82x damage          4.15x damage       3.39x damage
+for MRLs         disparity             disparity          disparity
 ```
 
-## Theory
+## Key Metrics
 
-From Banner et al. (2019):
+| Metric | Definition |
+|--------|------------|
+| Disparity Ratio | mean(LR degradation) / mean(HR degradation) |
+| Fair-Efficiency | throughput / disparity |
+| Alignment | BPE-to-morpheme boundary agreement |
 
+## Citation
+
+```bibtex
+@article{quant-disparity-2026,
+  title={Gateway Layers Matter: Fair Multilingual Quantization Through Selective Protection},
+  author={TBD},
+  year={2026}
+}
 ```
-Total error = clipping_error + quantization_noise
-α* = argmin_α { E[(X - clip(X,α))²] + Δ²/12 }
-
-For Gaussian:  α*/σ ≈ 2.5 (4-bit)
-For heavy-tail: α*/σ must increase with kurtosis
-```
-
-Our extension: **Languages activate different neuron subsets with different weight distributions.**
-
-## Next Steps
-
-1. **[DONE]** Extract real weight statistics from BLOOM-560M
-2. **[DONE]** Establish activation-outlier mechanism (r=-0.83)
-3. **[CURRENT]** EXP-009: Bit-width sweep (test threshold predictions)
-4. **[NEXT]** Build layer×language sensitivity matrix
-5. **[FUTURE]** Develop language-aware quantization
-
-## References
-
-- Banner et al. 2019 — Post-Training 4-bit Quantization
-- Chmiel et al. 2025 — FP8 Training at Scale
-- Marchisio et al. 2024 — Multilingual Quantization Disparity
 
 ## License
 
