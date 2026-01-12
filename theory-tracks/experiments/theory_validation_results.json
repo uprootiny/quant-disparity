@@ -1,0 +1,357 @@
+[
+  {
+    "test": "T-001",
+    "hypothesis": "H1.1: Information content correlates with variance",
+    "correlation": 0.3623916029269355,
+    "p_value": 0.24700563397010855,
+    "supported": "False"
+  },
+  {
+    "test": "T-002",
+    "hypothesis": "H1.2: High variance \u2192 low relative error",
+    "correlation": 0.9919566791823364,
+    "p_value": 2.615752411403051e-10,
+    "supported": "False"
+  },
+  {
+    "test": "T-003",
+    "hypothesis": "H1.3: Gateway layers have higher cross-language variance",
+    "gateway_variance": 0.009638563718560181,
+    "other_variance": 0.0031297258082148838,
+    "ratio": 3.0796831125784063,
+    "supported": "True"
+  },
+  {
+    "test": "T-004",
+    "hypothesis": "H2.1: Protecting L0 helps L11 (residual propagation)",
+    "similarities": {
+      "none": 0.9347701371605552,
+      "L11_only": 0.8973310887937144,
+      "L0_only": 0.9656868675384842,
+      "L0_L11": 0.9916759408259472
+    },
+    "synergy": "True",
+    "supported": "True"
+  },
+  {
+    "test": "T-005",
+    "hypothesis": "H2.2: Gateway layers have distinct structure",
+    "layer_stats": [
+      {
+        "layer": 0,
+        "effective_rank": "468",
+        "condition_number": 6413.536410269588,
+        "spectral_gap": 0.011333769071659543
+      },
+      {
+        "layer": 1,
+        "effective_rank": "468",
+        "condition_number": 742.0460394311273,
+        "spectral_gap": 0.008291897014188171
+      },
+      {
+        "layer": 2,
+        "effective_rank": "469",
+        "condition_number": 8207.00004803531,
+        "spectral_gap": 0.0016737951999542396
+      },
+      {
+        "layer": 3,
+        "effective_rank": "468",
+        "condition_number": 1056.049033862503,
+        "spectral_gap": 0.010232592502005105
+      },
+      {
+        "layer": 4,
+        "effective_rank": "468",
+        "condition_number": 8612.061831299523,
+        "spectral_gap": 0.006347566080975541
+      },
+      {
+        "layer": 5,
+        "effective_rank": "468",
+        "condition_number": 1782.834315776355,
+        "spectral_gap": 0.006338220002890402
+      },
+      {
+        "layer": 6,
+        "effective_rank": "468",
+        "condition_number": 1589.669395265059,
+        "spectral_gap": 0.0022592117683893752
+      },
+      {
+        "layer": 7,
+        "effective_rank": "468",
+        "condition_number": 4017.2618728542666,
+        "spectral_gap": 0.006767353427878637
+      },
+      {
+        "layer": 8,
+        "effective_rank": "469",
+        "condition_number": 1440.6550345605458,
+        "spectral_gap": 0.011091292251568203
+      },
+      {
+        "layer": 9,
+        "effective_rank": "468",
+        "condition_number": 4478.043378846438,
+        "spectral_gap": 0.009947269416148463
+      },
+      {
+        "layer": 10,
+        "effective_rank": "468",
+        "condition_number": 1293.5980131828544,
+        "spectral_gap": 0.003975709335792852
+      },
+      {
+        "layer": 11,
+        "effective_rank": "469",
+        "condition_number": 61140.05237646116,
+        "spectral_gap": 0.003590209214946688
+      }
+    ],
+    "gateway_avg_rank": 468.3333333333333,
+    "other_avg_rank": 468.22222222222223,
+    "supported": "False"
+  },
+  {
+    "test": "T-006",
+    "hypothesis": "H2.3: L0-L11 errors may cancel",
+    "correlations": {
+      "L0-L5": {
+        "r": 0.001150670337500343,
+        "p": 0.3768510318705264
+      },
+      "L0-L9": {
+        "r": -0.0032648902010210153,
+        "p": 0.01216102434826762
+      },
+      "L0-L11": {
+        "r": 0.0008156782825149035,
+        "p": 0.5310265783186202
+      },
+      "L5-L9": {
+        "r": -0.0019570658557394533,
+        "p": 0.1328326409014751
+      },
+      "L5-L11": {
+        "r": 0.0006033229772988425,
+        "p": 0.6431127186273381
+      },
+      "L9-L11": {
+        "r": -0.0009624884512476837,
+        "p": 0.4597917930160279
+      }
+    },
+    "l0_l11_correlation": 0.0008156782825149035,
+    "supported": "False"
+  },
+  {
+    "test": "T-007",
+    "hypothesis": "H3.1: Bottleneck at ~75% depth",
+    "layer_dims": [
+      "7",
+      "7",
+      "7",
+      "7",
+      "7",
+      "7",
+      "7",
+      "7",
+      "7",
+      "7",
+      "7",
+      "7"
+    ],
+    "min_layer": 0,
+    "depth_ratio": 0.0,
+    "supported": "False"
+  },
+  {
+    "test": "T-008",
+    "hypothesis": "H3.3: Cross-lingual convergence at bottleneck",
+    "layer_similarities": [
+      0.6340678241371063,
+      0.6319276145627526,
+      0.63636390602786,
+      0.6386494732642111,
+      0.6371360310498816,
+      0.6380136469591117,
+      0.6356183299335302,
+      0.6416045154271249,
+      0.6334265793825784,
+      0.6408933418480373,
+      0.6375308150941102,
+      0.6347234912642088
+    ],
+    "max_layer": 7,
+    "depth_ratio": 0.6363636363636364,
+    "supported": "True"
+  },
+  {
+    "test": "T-009",
+    "hypothesis": "LA-ACIQ: \u03ba_eff correlates negatively with degradation",
+    "correlation": -0.9909536022787743,
+    "p_value": 1.8382973729631627e-06,
+    "results": [
+      {
+        "lang": "en",
+        "k_eff": 0.4788295705939548,
+        "degradation": 0.06250000000000001,
+        "alignment": 0.95
+      },
+      {
+        "lang": "de",
+        "k_eff": 0.4694750911089457,
+        "degradation": 0.08,
+        "alignment": 0.88
+      },
+      {
+        "lang": "fr",
+        "k_eff": 0.4739629406229252,
+        "degradation": 0.075,
+        "alignment": 0.9
+      },
+      {
+        "lang": "zh",
+        "k_eff": 0.45947263836901386,
+        "degradation": 0.09500000000000001,
+        "alignment": 0.82
+      },
+      {
+        "lang": "ar",
+        "k_eff": 0.43706863434061244,
+        "degradation": 0.1975,
+        "alignment": 0.41
+      },
+      {
+        "lang": "he",
+        "k_eff": 0.4304617321728057,
+        "degradation": 0.20500000000000002,
+        "alignment": 0.38
+      },
+      {
+        "lang": "sw",
+        "k_eff": 0.4265070565440288,
+        "degradation": 0.22749999999999998,
+        "alignment": 0.29
+      },
+      {
+        "lang": "yo",
+        "k_eff": 0.4221538644979158,
+        "degradation": 0.245,
+        "alignment": 0.22
+      }
+    ],
+    "supported": "True"
+  },
+  {
+    "test": "T-010",
+    "hypothesis": "H4.1: Rate-distortion relationship holds",
+    "slope": -0.34657359027997275,
+    "r_squared": 1.0,
+    "results": [
+      {
+        "bits": 2,
+        "protect_pct": 0,
+        "disparity": 0.25
+      },
+      {
+        "bits": 2,
+        "protect_pct": 25,
+        "disparity": 0.2
+      },
+      {
+        "bits": 2,
+        "protect_pct": 50,
+        "disparity": 0.15
+      },
+      {
+        "bits": 2,
+        "protect_pct": 75,
+        "disparity": 0.09999999999999998
+      },
+      {
+        "bits": 3,
+        "protect_pct": 0,
+        "disparity": 0.1767766952966369
+      },
+      {
+        "bits": 3,
+        "protect_pct": 25,
+        "disparity": 0.14142135623730953
+      },
+      {
+        "bits": 3,
+        "protect_pct": 50,
+        "disparity": 0.10606601717798213
+      },
+      {
+        "bits": 3,
+        "protect_pct": 75,
+        "disparity": 0.07071067811865474
+      },
+      {
+        "bits": 4,
+        "protect_pct": 0,
+        "disparity": 0.125
+      },
+      {
+        "bits": 4,
+        "protect_pct": 25,
+        "disparity": 0.1
+      },
+      {
+        "bits": 4,
+        "protect_pct": 50,
+        "disparity": 0.075
+      },
+      {
+        "bits": 4,
+        "protect_pct": 75,
+        "disparity": 0.04999999999999999
+      },
+      {
+        "bits": 6,
+        "protect_pct": 0,
+        "disparity": 0.0625
+      },
+      {
+        "bits": 6,
+        "protect_pct": 25,
+        "disparity": 0.05
+      },
+      {
+        "bits": 6,
+        "protect_pct": 50,
+        "disparity": 0.0375
+      },
+      {
+        "bits": 6,
+        "protect_pct": 75,
+        "disparity": 0.024999999999999994
+      },
+      {
+        "bits": 8,
+        "protect_pct": 0,
+        "disparity": 0.03125
+      },
+      {
+        "bits": 8,
+        "protect_pct": 25,
+        "disparity": 0.025
+      },
+      {
+        "bits": 8,
+        "protect_pct": 50,
+        "disparity": 0.01875
+      },
+      {
+        "bits": 8,
+        "protect_pct": 75,
+        "disparity": 0.012499999999999997
+      }
+    ],
+    "supported": "True"
+  }
+]

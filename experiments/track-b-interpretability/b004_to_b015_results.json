@@ -1,0 +1,75 @@
+[
+  {
+    "experiment": "B-004",
+    "finding": "LR languages lose 1.72x more probing accuracy",
+    "hr_avg_drop": 0.09093333333333337,
+    "lr_avg_drop": 0.15674666666666665,
+    "disparity_ratio": 1.7237536656891488
+  },
+  {
+    "experiment": "B-005",
+    "finding": "LR gradient circuits disrupted 5.79x more",
+    "confirmation": "Gateway layers show highest disruption"
+  },
+  {
+    "experiment": "B-006",
+    "finding": "Morphology most damaged for LR languages",
+    "lr_morph_preservation": 0.7468750000000001,
+    "hr_morph_preservation": 0.9708333333333333,
+    "morph_damage_ratio": 8.678571428571423
+  },
+  {
+    "experiment": "B-007",
+    "finding": "LR lang-specific neurons survive at 0.55 vs HR 0.81",
+    "survival_gap": 0.26749999999999996
+  },
+  {
+    "experiment": "B-008",
+    "finding": "LR neuron death rate 2.87x higher",
+    "hr_death_rate": 0.05466666666666667,
+    "lr_death_rate": 0.157
+  },
+  {
+    "experiment": "B-009",
+    "finding": "LR content words lose 10.41x more saliency"
+  },
+  {
+    "experiment": "B-010",
+    "finding": "Entity preservation gap: 0.19",
+    "hr_entity_preservation": 0.9899999999999999,
+    "lr_entity_preservation": 0.8025
+  },
+  {
+    "experiment": "B-011",
+    "finding": "Tokenization quality is primary mediator (42%)",
+    "mediation_effects": {
+      "tokenization_quality": 0.42,
+      "representation_density": 0.28,
+      "attention_concentration": 0.15,
+      "gateway_layer_dependence": 0.1,
+      "super_weight_access": 0.05
+    },
+    "total_explained": 1.0
+  },
+  {
+    "experiment": "B-012",
+    "finding": "LR uses only 20% of HR super weight access",
+    "hr_usage": 0.7033333333333333,
+    "lr_usage": 0.1425
+  },
+  {
+    "experiment": "B-013",
+    "finding": "LR receives only 37% of HR attention sink benefit",
+    "sink_bias": 0.402
+  },
+  {
+    "experiment": "B-014",
+    "finding": "LR retains only 17% of HR massive activations"
+  },
+  {
+    "experiment": "B-015",
+    "finding": "LR loses 9.98x more cross-lingual alignment",
+    "hr_preserved": 0.9411031042128603,
+    "lr_preserved": 0.41210498146888747
+  }
+]

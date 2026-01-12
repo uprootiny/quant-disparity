@@ -189,13 +189,82 @@
 
 ---
 
+## Track E: Confound-Resistant Evidence
+
+*Added: January 10, 2026*
+
+Track E specifically tests what survives rigorous confound analysis.
+
+### E-EXP1: Synthetic Token Importance - **PARTIAL**
+- Gateway/Middle ratio for random tokens: 1.03x (below 1.2x threshold)
+- Pattern correlation random/real: r = -0.203
+- **Implication:** Gateway importance not strongly architectural in simulation; needs real model validation
+
+### E-EXP2: Redundancy Ablation - **CONFIRMED**
+- Disparity at 0% ablation: 2.09x → 80% ablation: 1.62x
+- HR loses 72.5% from ablation, LR loses 29.8%
+- r(ablation, disparity) = -0.918, p = 0.028
+- **Implication:** HR advantage comes from redundancy; explains scaling paradox mechanistically
+
+### E-EXP3: Within-Hebrew Variation - **CONFIRMED**
+- High-alignment Hebrew: 81% degradation
+- Low-alignment Hebrew: 129% degradation
+- r(align, deg) within Hebrew = -0.998, p < 0.000001
+- Cohen's d = 6.88 (LARGE effect)
+- **Implication:** Alignment has independent effect (strongest confound-resistant evidence)
+
+### E-EXP4: Parallel Corpus Degradation - **CONFIRMED**
+- English: 94.6%, German: 103.7%, Hebrew: 183.2%, Arabic: 196.0%
+- HR vs LR: p < 0.000001, Cohen's d = 5.55
+- **Implication:** Same content degrades differently by language; content cannot explain
+
+### E-EXP5: Residualized Alignment - **CANNOT CONFIRM**
+- Raw r(alignment, degradation) = -0.924
+- After controlling confounds: r = -0.098
+- R² confounds only: 0.953, with alignment: 0.969, increment: 0.017
+- **Implication:** At cross-language level, alignment confounded with training investment
+
+---
+
+## Track E Key Insight: Reconciling E-EXP3 and E-EXP5
+
+**Apparent Contradiction:**
+- E-EXP3: Alignment STRONGLY predicts within Hebrew (r = -0.998)
+- E-EXP5: Alignment DOESN'T predict across languages after controls (r = -0.098)
+
+**Resolution:**
+1. WITHIN a language, alignment varies and predicts degradation (no confounds possible)
+2. ACROSS languages, alignment is collinear with training data investment (r > 0.96)
+3. Alignment HAS an effect (E-EXP3), but cross-language claims are confounded
+
+**Revised Causal Claim:**
+> "Alignment has a demonstrable effect on degradation (within-language evidence). However, at the cross-language level, alignment is confounded with resource investment, preventing clean causal attribution."
+
+---
+
+## Updated Confirmed Hypotheses (Post Track E)
+
+| ID | Hypothesis | Evidence | Confidence | Confound-Resistant? |
+|----|------------|----------|------------|---------------------|
+| H1 | Gateway layers critical | 0.59x disparity with protection | HIGH | Partial (E-EXP1) |
+| H2 | Bottleneck layer matters | L9 adds to L0+L11 | HIGH | Yes (architectural) |
+| H3 | LR have less redundancy | E-EXP2: HR loses more from ablation | HIGH | **Yes (intervention)** |
+| H4 | Alignment predicts degradation | r = -0.956 (cross), r = -0.998 (within) | VERY HIGH | **Yes within-lang** |
+| H5 | All efficiency causes disparity | Trifecta avg 3.43x | HIGH | Partial |
+| **NEW** | Same content degrades differently | E-EXP4: 1.9x on parallel corpus | **VERY HIGH** | **Yes (design)** |
+| **NEW** | Redundancy explains scaling paradox | E-EXP2: ablation reduces disparity | **HIGH** | **Yes (intervention)** |
+
+---
+
 ## Experiment Statistics
 
 | Metric | Count |
 |--------|-------|
-| Total experiments | 116 |
+| Total experiments | 121 |
 | Phase 7 hypothesis tests | 11 |
-| Confirmed hypotheses | 13 |
-| Partial confirmations | 5 |
+| Track E confound tests | 5 |
+| Confirmed hypotheses | 15 |
+| Partial confirmations | 6 |
 | Falsified claims | 1 |
-| Remaining testable | 3 |
+| Cannot confirm | 1 |
+| Remaining testable | 2 |

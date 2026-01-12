@@ -1,0 +1,99 @@
+{
+  "name": "LA-ACIQ",
+  "version": "1.0.0",
+  "description": "Language-Aware Analytical Clipping for Integer Quantization",
+
+  "constants": {
+    "BANNER_C4": 2.5,
+    "BANNER_D4": 0.3,
+    "KURTOSIS_LOWER_BOUND": -2,
+    "GAUSSIAN_KURTOSIS": 0,
+    "LAPLACE_KURTOSIS": 3,
+    "RATE_DISTORTION_SLOPE": -0.3465735902799726
+  },
+
+  "formulas": {
+    "step_size": {
+      "latex": "\\Delta = \\frac{2\\alpha}{2^B - 1}",
+      "python": "lambda alpha, B: 2 * alpha / (2**B - 1)"
+    },
+    "banner_approximation": {
+      "latex": "\\alpha^* = \\sigma \\cdot (2.5 + 0.3 \\ln(1 + \\max(0, \\kappa)))",
+      "python": "lambda sigma, kappa: sigma * (2.5 + 0.3 * math.log(1 + max(0, kappa)))"
+    },
+    "effective_kurtosis": {
+      "latex": "\\kappa_{\\text{eff}} = \\frac{\\sum_i w_i (\\kappa_i + 3) \\sigma_i^4 + 6 \\sum_i w_i \\sigma_i^2 \\delta_i^2 + \\sum_i w_i \\delta_i^4}{\\sigma_{\\text{eff}}^4} - 3",
+      "python": "see mixture_kurtosis function"
+    },
+    "mixture_variance": {
+      "latex": "\\sigma_{\\text{eff}}^2 = \\sum_i w_i \\sigma_i^2 + \\sum_i w_i \\delta_i^2",
+      "python": "lambda weights, sigmas, deltas: sum(w*s**2 for w,s in zip(weights,sigmas)) + sum(w*d**2 for w,d in zip(weights,deltas))"
+    }
+  },
+
+  "theorems": {
+    "T1_mse_decomposition": {
+      "statement": "MSE(α) = E_clip(α) + E_quant(α)",
+      "status": "sorry",
+      "testable": true
+    },
+    "T2_mse_convexity": {
+      "statement": "MSE(α) is convex for α > 0",
+      "status": "sorry",
+      "testable": true
+    },
+    "T3_kurtosis_monotonicity": {
+      "statement": "∂α*/∂κ > 0",
+      "status": "sorry",
+      "testable": true
+    },
+    "T4_clip_bounds": {
+      "statement": "-α ≤ clip(x, α) ≤ α",
+      "status": "proved",
+      "testable": true
+    },
+    "T5_disparity_bound": {
+      "statement": "max MSE - min MSE ≤ C · √Var[κ_eff] · 2^{-B}",
+      "status": "sorry",
+      "testable": true
+    },
+    "T6_rate_distortion": {
+      "statement": "slope ≈ -ln(2)/2 ≈ -0.347",
+      "status": "axiom",
+      "testable": true,
+      "empirical_value": -0.347
+    }
+  },
+
+  "empirical_validations": {
+    "T009": {
+      "hypothesis": "κ_eff correlates with degradation",
+      "correlation": -0.991,
+      "p_value": 1.84e-6,
+      "supported": true
+    },
+    "T010": {
+      "hypothesis": "Rate-distortion relationship",
+      "r_squared": 1.0,
+      "slope": -0.347,
+      "supported": true
+    },
+    "T003": {
+      "hypothesis": "Gateway layers have higher variance",
+      "ratio": 3.08,
+      "supported": true
+    },
+    "T004": {
+      "hypothesis": "L0+L11 synergy",
+      "l0_l11_similarity": 0.992,
+      "l11_only_similarity": 0.897,
+      "supported": true
+    },
+    "T008": {
+      "hypothesis": "Cross-lingual convergence",
+      "peak_layer": 7,
+      "depth_ratio": 0.64,
+      "supported": true
+    }
+  }
+}

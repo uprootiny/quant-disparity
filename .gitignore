@@ -45,3 +45,4 @@ reports/
 # Data files (keep README only)
 data/*.parquet
 data/*.csv
+theory-tracks/formal-proofs/.lake/

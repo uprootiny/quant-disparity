@@ -1,0 +1,50 @@
+{
+  "languages": [
+    {
+      "language": "English",
+      "kappa_eff": 0.3548780487804861,
+      "sigma_eff": 0.10000000000000002,
+      "alpha_opt": 0.25911134348144,
+      "mse": 0.00010264481151190363,
+      "clip_error": 1.0910848023076078e-05,
+      "quant_noise": 9.857948739955856e-05,
+      "decomposition_error": 0.06669131289510771
+    },
+    {
+      "language": "German",
+      "kappa_eff": 0.6461538461538456,
+      "sigma_eff": 0.12,
+      "alpha_opt": 0.31794389632438563,
+      "mse": 0.00015734067299898226,
+      "clip_error": 1.6836790365412775e-05,
+      "quant_noise": 0.0001487421046306728,
+      "decomposition_error": 0.05235910463689275
+    },
+    {
+      "language": "Yoruba",
+      "kappa_eff": 2.0722627737226285,
+      "sigma_eff": 0.15,
+      "alpha_opt": 0.425508645747678,
+      "mse": 0.00027543050484108307,
+      "clip_error": 1.959176499910977e-05,
+      "quant_noise": 0.0002668923252859153,
+      "decomposition_error": 0.040132016012961395
+    }
+  ],
+  "validations": [
+    {
+      "test": "T-009",
+      "computed_correlation": 0.9878995599493707,
+      "expected": "strong correlation (|r| > 0.9)",
+      "validated": true,
+      "note": "\u03ba_eff \u2194 MSE: higher effective kurtosis \u2192 higher quantization error"
+    },
+    {
+      "test": "T-010",
+      "computed_slope": -0.34657359027997264,
+      "expected_slope": -0.3465735902799726,
+      "validated": true,
+      "theory": "D(B) \u221d 2^{-B/2}, slope = -ln(2)/2 \u2248 -0.347"
+    }
+  ]
+}

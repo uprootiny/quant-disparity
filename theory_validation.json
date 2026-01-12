@@ -1,0 +1,86 @@
+{
+  "k_global": 30.122281422184905,
+  "var_k_eff": 1.6872298486495827,
+  "disparity": 0.02,
+  "implied_C": 0.015397239697378743,
+  "correlations": {
+    "suboptimality_r": 0.528295689566347,
+    "suboptimality_p": 0.05213750547126323,
+    "k_eff_degradation_r": -0.8341124195489785,
+    "k_eff_degradation_p": 0.00020833863719373652,
+    "outlier_degradation_r": -0.8341124195489784,
+    "outlier_degradation_p": 0.00020833863719373652
+  },
+  "per_language": {
+    "ara": {
+      "k_eff": 28.988217323899164,
+      "degradation": 0.025,
+      "outlier_frac": 0.1771732773159991
+    },
+    "deu": {
+      "k_eff": 30.82426008168375,
+      "degradation": 0.008,
+      "outlier_frac": 0.19006912617700442
+    },
+    "eng": {
+      "k_eff": 32.91066269432952,
+      "degradation": 0.005,
+      "outlier_frac": 0.20472343236993415
+    },
+    "fin": {
+      "k_eff": 30.960921102778205,
+      "degradation": 0.016,
+      "outlier_frac": 0.19102899482154037
+    },
+    "fra": {
+      "k_eff": 32.51079226939691,
+      "degradation": 0.007,
+      "outlier_frac": 0.20191485476897508
+    },
+    "heb": {
+      "k_eff": 29.835854045360037,
+      "degradation": 0.02,
+      "outlier_frac": 0.18312683967322171
+    },
+    "hin": {
+      "k_eff": 28.26339312810989,
+      "degradation": 0.021,
+      "outlier_frac": 0.17208231565943247
+    },
+    "jpn": {
+      "k_eff": 29.4678067424489,
+      "degradation": 0.022,
+      "outlier_frac": 0.18054177874698837
+    },
+    "kor": {
+      "k_eff": 29.21958535043918,
+      "degradation": 0.018,
+      "outlier_frac": 0.17879834137775838
+    },
+    "rus": {
+      "k_eff": 29.671466907090085,
+      "degradation": 0.012,
+      "outlier_frac": 0.18197223056576256
+    },
+    "tha": {
+      "k_eff": 28.707625053771743,
+      "degradation": 0.02,
+      "outlier_frac": 0.17520247598700625
+    },
+    "tur": {
+      "k_eff": 29.800658485314543,
+      "degradation": 0.015,
+      "outlier_frac": 0.18287963594062848
+    },
+    "vie": {
+      "k_eff": 30.78695439761905,
+      "degradation": 0.009,
+      "outlier_frac": 0.18980710152571836
+    },
+    "zho": {
+      "k_eff": 29.763742328347742,
+      "degradation": 0.013,
+      "outlier_frac": 0.18262034721831819
+    }
+  }
+}
