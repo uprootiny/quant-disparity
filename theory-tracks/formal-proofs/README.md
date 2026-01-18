@@ -24,6 +24,22 @@ formal-proofs/
 
 ## Theorems Formalized
 
+### Fully Proved (no `sorry`)
+
+| Theorem | File | Description |
+|---------|------|-------------|
+| `clip_le_alpha` | `Quantization/Basic.lean` | clip(x, α) ≤ α |
+| `neg_alpha_le_clip` | `Quantization/Basic.lean` | -α ≤ clip(x, α) |
+| `clip_in_range` | `Quantization/Basic.lean` | -α ≤ clip(x, α) ≤ α |
+| `clip_of_in_range` | `Quantization/Basic.lean` | x ∈ [-α, α] → clip(x, α) = x |
+| `clip_idempotent` | `Quantization/Basic.lean` | clip(clip(x, α), α) = clip(x, α) |
+| `clip_abs_le` | `Quantization/Basic.lean` | \|clip(x, α)\| ≤ α |
+| `clip_mono_x` | `Quantization/Basic.lean` | x ≤ y → clip(x, α) ≤ clip(y, α) |
+| `clip_mono_alpha` | `Quantization/Basic.lean` | α ≤ β → clip(x, α) ∈ [-β, β] |
+| `clip_nonneg` | `Quantization/Basic.lean` | x ≥ 0 → clip(x, α) ≥ 0 |
+
+### Scaffolded (with `sorry`)
+
 | Theorem | File | Status |
 |---------|------|--------|
 | MSE Decomposition | `Quantization/MSE.lean` | `sorry` |
@@ -53,17 +69,16 @@ lake build
 
 ## Proof Status
 
-Current status: **Scaffolding complete, proofs pending (`sorry`)**
+Current status: **9 theorems fully proved, 7 scaffolded with `sorry`**
 
-The structure captures:
-1. All definitions needed for LA-ACIQ
-2. Theorem statements matching the proof sketch
-3. Proper imports from Mathlib
+Completed:
+1. All clipping function properties (Basic.lean) - 9 theorems
+2. Core definitions for MSE, kurtosis, optimization
 
 Next steps:
-1. Fill in `sorry` proofs
-2. Add more detailed lemmas
-3. Verify computational aspects
+1. Fill in MSE decomposition proof (measure-theoretic)
+2. Complete convexity proofs
+3. Prove kurtosis properties (shift/scale invariance)
 
 ## Dependencies
 

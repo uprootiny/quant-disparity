@@ -55,4 +55,38 @@ theorem clip_of_in_range (x α : ℝ) (hx : -α ≤ x ∧ x ≤ α) : clip x α 
   unfold clip
   rw [min_eq_right hx.2, max_eq_right hx.1]
 
+/-- Clipping is idempotent: clip(clip(x, α), α) = clip(x, α) -/
+theorem clip_idempotent (x α : ℝ) (hα : 0 < α) : clip (clip x α) α = clip x α := by
+  apply clip_of_in_range
+  exact clip_in_range x α hα
+
+/-- Absolute value of clipped value is bounded by α -/
+theorem clip_abs_le (x α : ℝ) (hα : 0 < α) : |clip x α| ≤ α := by
+  rw [abs_le]
+  constructor
+  · have h := neg_alpha_le_clip x α hα
+    linarith
+  · exact clip_le_alpha x α hα
+
+/-- Clip is monotone in x for fixed α -/
+theorem clip_mono_x (x y α : ℝ) (hxy : x ≤ y) : clip x α ≤ clip y α := by
+  unfold clip
+  apply max_le_max_left
+  apply min_le_min_left
+  exact hxy
+
+/-- Clip with larger bound contains result of clip with smaller bound -/
+theorem clip_mono_alpha (x α β : ℝ) (hαβ : α ≤ β) (hα : 0 < α) :
+    -β ≤ clip x α ∧ clip x α ≤ β := by
+  have h := clip_in_range x α hα
+  constructor
+  · linarith [h.1]
+  · linarith [h.2]
+
+/-- Clipping preserves non-negativity when x ≥ 0 and α > 0 -/
+theorem clip_nonneg (x α : ℝ) (hx : 0 ≤ x) (hα : 0 < α) : 0 ≤ clip x α := by
+  unfold clip
+  apply le_max_of_le_right
+  apply le_min (le_of_lt hα) hx
+
 end Laaciq.Quantization

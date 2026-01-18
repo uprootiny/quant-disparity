@@ -47,10 +47,40 @@
       "status": "sorry",
       "testable": true
     },
-    "T4_clip_bounds": {
+    "T4_clip_in_range": {
       "statement": "-α ≤ clip(x, α) ≤ α",
       "status": "proved",
-      "testable": true
+      "lean_theorem": "clip_in_range"
+    },
+    "T4a_clip_of_in_range": {
+      "statement": "x ∈ [-α, α] → clip(x, α) = x",
+      "status": "proved",
+      "lean_theorem": "clip_of_in_range"
+    },
+    "T4b_clip_idempotent": {
+      "statement": "clip(clip(x, α), α) = clip(x, α)",
+      "status": "proved",
+      "lean_theorem": "clip_idempotent"
+    },
+    "T4c_clip_abs_le": {
+      "statement": "|clip(x, α)| ≤ α",
+      "status": "proved",
+      "lean_theorem": "clip_abs_le"
+    },
+    "T4d_clip_mono_x": {
+      "statement": "x ≤ y → clip(x, α) ≤ clip(y, α)",
+      "status": "proved",
+      "lean_theorem": "clip_mono_x"
+    },
+    "T4e_clip_mono_alpha": {
+      "statement": "α ≤ β → clip(x, α) ∈ [-β, β]",
+      "status": "proved",
+      "lean_theorem": "clip_mono_alpha"
+    },
+    "T4f_clip_nonneg": {
+      "statement": "x ≥ 0 → clip(x, α) ≥ 0",
+      "status": "proved",
+      "lean_theorem": "clip_nonneg"
     },
     "T5_disparity_bound": {
       "statement": "max MSE - min MSE ≤ C · √Var[κ_eff] · 2^{-B}",

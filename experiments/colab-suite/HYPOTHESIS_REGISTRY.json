@@ -1,0 +1,190 @@
+{
+  "registry_version": "1.0.0",
+  "project": "LA-ACIQ: Language-Aware Quantization Disparity",
+  "last_updated": "2026-01-18",
+
+  "hypotheses": {
+    "H1": {
+      "id": "H1",
+      "name": "Disparity Existence",
+      "statement": "INT4 quantization degrades low-resource languages more than high-resource languages",
+      "prediction": "D_LR / D_HR > 1.5",
+      "null_hypothesis": "D_LR / D_HR = 1.0",
+      "test": "Two-sample t-test, Cohen's d",
+      "status": "pending",
+      "experiments": ["EXP-001", "EXP-002"],
+      "references": ["Ahia2021"]
+    },
+    "H2": {
+      "id": "H2",
+      "name": "Kurtosis-Degradation Correlation",
+      "statement": "Effective kurtosis of activated weight distribution predicts quantization sensitivity",
+      "prediction": "r(κ_eff, D) significant, |r| > 0.7",
+      "null_hypothesis": "r(κ_eff, D) = 0",
+      "test": "Pearson correlation, permutation test",
+      "status": "pending",
+      "experiments": ["EXP-003"],
+      "references": ["Banner2019"]
+    },
+    "H3": {
+      "id": "H3",
+      "name": "Fertility-Degradation Correlation",
+      "statement": "Token fertility (tokens/words) predicts quantization degradation",
+      "prediction": "r(fertility, D) > 0.7",
+      "null_hypothesis": "r(fertility, D) = 0",
+      "test": "Pearson/Spearman correlation",
+      "status": "pending",
+      "experiments": ["EXP-001", "EXP-002"],
+      "references": ["Acs2019", "Rust2021"]
+    },
+    "H4": {
+      "id": "H4",
+      "name": "Rate-Distortion Scaling",
+      "statement": "Degradation follows rate-distortion theory: D ∝ 2^{-B/2}",
+      "prediction": "slope(log D vs B) ≈ -0.347 = -ln(2)/2",
+      "null_hypothesis": "No systematic relationship",
+      "test": "Linear regression on log-scale",
+      "status": "pending",
+      "experiments": ["EXP-004"],
+      "references": ["Shannon1948", "Cover2006"]
+    },
+    "H5": {
+      "id": "H5",
+      "name": "Gateway Layer Criticality",
+      "statement": "Layers 0 and final layer are disproportionately important for LR languages",
+      "prediction": "Protecting L0+L_final reduces disparity by >30%",
+      "null_hypothesis": "All layers equally important",
+      "test": "Layer ablation study",
+      "status": "pending",
+      "experiments": ["EXP-005"],
+      "references": ["Elhage2022"]
+    },
+    "H6": {
+      "id": "H6",
+      "name": "LA-ACIQ Effectiveness",
+      "statement": "Per-language optimal clipping reduces disparity",
+      "prediction": "Disparity reduction > 20% with LA-ACIQ",
+      "null_hypothesis": "No improvement over global clipping",
+      "test": "Paired comparison",
+      "status": "pending",
+      "experiments": ["EXP-006"],
+      "references": ["Banner2019"]
+    }
+  },
+
+  "experiments": {
+    "EXP-001": {
+      "name": "Disparity Validation (BLOOM-560M)",
+      "notebook": "exp001_disparity_validation.ipynb",
+      "hypotheses": ["H1", "H3"],
+      "model": "bigscience/bloom-560m",
+      "gpu_memory": "~4GB",
+      "runtime": "~15min",
+      "status": "ready"
+    },
+    "EXP-002": {
+      "name": "Disparity Validation (BLOOM-1B7)",
+      "notebook": "exp002_bloom1b7.ipynb",
+      "hypotheses": ["H1", "H3"],
+      "model": "bigscience/bloom-1b7",
+      "gpu_memory": "~8GB",
+      "runtime": "~30min",
+      "status": "ready"
+    },
+    "EXP-003": {
+      "name": "Kurtosis Analysis",
+      "notebook": "exp003_kurtosis_analysis.ipynb",
+      "hypotheses": ["H2"],
+      "model": "bigscience/bloom-560m",
+      "gpu_memory": "~4GB",
+      "runtime": "~20min",
+      "status": "ready"
+    },
+    "EXP-004": {
+      "name": "Rate-Distortion Curve",
+      "notebook": "exp004_rate_distortion.ipynb",
+      "hypotheses": ["H4"],
+      "model": "bigscience/bloom-560m",
+      "gpu_memory": "~6GB",
+      "runtime": "~45min",
+      "status": "ready"
+    },
+    "EXP-005": {
+      "name": "Layer Ablation Study",
+      "notebook": "exp005_layer_ablation.ipynb",
+      "hypotheses": ["H5"],
+      "model": "facebook/opt-125m",
+      "gpu_memory": "~2GB",
+      "runtime": "~60min",
+      "status": "ready"
+    },
+    "EXP-006": {
+      "name": "LA-ACIQ Intervention",
+      "notebook": "exp006_laaciq_intervention.ipynb",
+      "hypotheses": ["H6"],
+      "model": "bigscience/bloom-560m",
+      "gpu_memory": "~6GB",
+      "runtime": "~30min",
+      "status": "ready"
+    }
+  },
+
+  "references": {
+    "Ahia2021": {
+      "authors": "Ahia, O., Kreutzer, J., & Hooker, S.",
+      "year": 2021,
+      "title": "The Low-Resource Double-Bind: An Empirical Study of Pruning for Low-Resource Machine Translation",
+      "venue": "Findings of ACL",
+      "doi": "10.18653/v1/2021.findings-acl.234"
+    },
+    "Banner2019": {
+      "authors": "Banner, R., Nahshan, Y., & Soudry, D.",
+      "year": 2019,
+      "title": "Post-Training 4-bit Quantization of Convolutional Networks for Rapid-Deployment",
+      "venue": "NeurIPS",
+      "url": "https://arxiv.org/abs/1810.05723"
+    },
+    "Dettmers2022": {
+      "authors": "Dettmers, T., Lewis, M., Belkada, Y., & Zettlemoyer, L.",
+      "year": 2022,
+      "title": "LLM.int8(): 8-bit Matrix Multiplication for Transformers at Scale",
+      "venue": "NeurIPS",
+      "url": "https://arxiv.org/abs/2208.07339"
+    },
+    "Shannon1948": {
+      "authors": "Shannon, C. E.",
+      "year": 1948,
+      "title": "A Mathematical Theory of Communication",
+      "venue": "Bell System Technical Journal",
+      "doi": "10.1002/j.1538-7305.1948.tb01338.x"
+    },
+    "Cover2006": {
+      "authors": "Cover, T. M., & Thomas, J. A.",
+      "year": 2006,
+      "title": "Elements of Information Theory",
+      "venue": "Wiley-Interscience",
+      "isbn": "978-0471241959"
+    },
+    "Acs2019": {
+      "authors": "Ács, J.",
+      "year": 2019,
+      "title": "Exploring BERT's Vocabulary",
+      "venue": "Blog post",
+      "url": "https://juditacs.github.io/2019/02/19/bert-tokenization-stats.html"
+    },
+    "Rust2021": {
+      "authors": "Rust, P., Pfeiffer, J., Vulić, I., Ruder, S., & Gurevych, I.",
+      "year": 2021,
+      "title": "How Good is Your Tokenizer?",
+      "venue": "ACL",
+      "doi": "10.18653/v1/2021.acl-long.259"
+    },
+    "Elhage2022": {
+      "authors": "Elhage, N., et al.",
+      "year": 2022,
+      "title": "Softmax Linear Units",
+      "venue": "Transformer Circuits Thread",
+      "url": "https://transformer-circuits.pub/2022/solu/index.html"
+    }
+  }
+}
